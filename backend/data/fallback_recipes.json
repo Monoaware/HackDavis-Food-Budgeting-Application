@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1001,
+    "title": "Lemon Herb Baked Salmon",
+    "prepTime": 25,
+    "protein": 42.0,
+    "fiber": 1.2,
+    "dietTags": ["gluten free", "pescetarian"],
+    "allergens": ["seafood"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "salmon fillet", "amount": 200, "unit": "g"},
+      {"name": "lemon", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 2, "unit": "cloves"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "fresh herbs", "amount": 10, "unit": "g"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1002,
+    "title": "Black Bean & Veggie Burrito Bowl",
+    "prepTime": 20,
+    "protein": 18.0,
+    "fiber": 14.5,
+    "dietTags": ["vegetarian", "vegan"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "black beans", "amount": 1, "unit": "cup"},
+      {"name": "rice", "amount": 1, "unit": "cup"},
+      {"name": "corn", "amount": 0.5, "unit": "cup"},
+      {"name": "bell pepper", "amount": 1, "unit": ""},
+      {"name": "onion", "amount": 0.5, "unit": ""},
+      {"name": "avocado", "amount": 0.5, "unit": ""},
+      {"name": "lime", "amount": 1, "unit": ""}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1003,
+    "title": "Greek Chicken Bowl",
+    "prepTime": 30,
+    "protein": 38.0,
+    "fiber": 4.2,
+    "dietTags": ["gluten free"],
+    "allergens": ["dairy"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chicken breast", "amount": 200, "unit": "g"},
+      {"name": "cucumber", "amount": 1, "unit": ""},
+      {"name": "tomato", "amount": 1, "unit": ""},
+      {"name": "olives", "amount": 0.25, "unit": "cup"},
+      {"name": "feta cheese", "amount": 50, "unit": "g"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "lemon", "amount": 1, "unit": ""}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1004,
+    "title": "Lentil Vegetable Soup",
+    "prepTime": 35,
+    "protein": 16.5,
+    "fiber": 12.0,
+    "dietTags": ["vegetarian", "vegan", "gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "lentils", "amount": 1, "unit": "cup"},
+      {"name": "carrot", "amount": 2, "unit": ""},
+      {"name": "celery", "amount": 2, "unit": "stalks"},
+      {"name": "onion", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "vegetable broth", "amount": 4, "unit": "cups"},
+      {"name": "spinach", "amount": 2, "unit": "cups"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1005,
+    "title": "Turkey & Quinoa Stuffed Peppers",
+    "prepTime": 40,
+    "protein": 32.0,
+    "fiber": 7.5,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "ground turkey", "amount": 200, "unit": "g"},
+      {"name": "quinoa", "amount": 0.5, "unit": "cup"},
+      {"name": "bell pepper", "amount": 4, "unit": ""},
+      {"name": "tomato", "amount": 1, "unit": "cup"},
+      {"name": "onion", "amount": 0.5, "unit": ""},
+      {"name": "garlic", "amount": 2, "unit": "cloves"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1006,
+    "title": "Tofu Stir-Fry with Broccoli",
+    "prepTime": 20,
+    "protein": 20.0,
+    "fiber": 5.8,
+    "dietTags": ["vegetarian", "vegan"],
+    "allergens": ["soy"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "firm tofu", "amount": 200, "unit": "g"},
+      {"name": "broccoli", "amount": 2, "unit": "cups"},
+      {"name": "soy sauce", "amount": 3, "unit": "tbsp"},
+      {"name": "garlic", "amount": 2, "unit": "cloves"},
+      {"name": "ginger", "amount": 1, "unit": "tsp"},
+      {"name": "rice", "amount": 1, "unit": "cup"},
+      {"name": "oil", "amount": 2, "unit": "tbsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1007,
+    "title": "Overnight Oats with Berries",
+    "prepTime": 5,
+    "protein": 12.0,
+    "fiber": 8.0,
+    "dietTags": ["vegetarian"],
+    "allergens": ["dairy", "gluten"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "oats", "amount": 0.5, "unit": "cup"},
+      {"name": "milk", "amount": 0.75, "unit": "cup"},
+      {"name": "yogurt", "amount": 0.25, "unit": "cup"},
+      {"name": "mixed berries", "amount": 0.5, "unit": "cup"},
+      {"name": "honey", "amount": 1, "unit": "tbsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1008,
+    "title": "Beef & Vegetable Stew",
+    "prepTime": 45,
+    "protein": 35.0,
+    "fiber": 6.5,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "beef chuck", "amount": 250, "unit": "g"},
+      {"name": "potato", "amount": 2, "unit": ""},
+      {"name": "carrot", "amount": 2, "unit": ""},
+      {"name": "onion", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "beef broth", "amount": 3, "unit": "cups"},
+      {"name": "tomato", "amount": 1, "unit": "cup"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1009,
+    "title": "Chickpea Curry",
+    "prepTime": 30,
+    "protein": 15.0,
+    "fiber": 10.5,
+    "dietTags": ["vegetarian", "vegan", "gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chickpeas", "amount": 1.5, "unit": "cups"},
+      {"name": "coconut milk", "amount": 1, "unit": "cup"},
+      {"name": "tomato", "amount": 1, "unit": "cup"},
+      {"name": "onion", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "ginger", "amount": 1, "unit": "tbsp"},
+      {"name": "rice", "amount": 1, "unit": "cup"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1010,
+    "title": "Spinach & Egg Scramble",
+    "prepTime": 10,
+    "protein": 22.0,
+    "fiber": 3.0,
+    "dietTags": ["vegetarian", "gluten free"],
+    "allergens": ["egg", "dairy"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "eggs", "amount": 3, "unit": ""},
+      {"name": "spinach", "amount": 2, "unit": "cups"},
+      {"name": "onion", "amount": 0.5, "unit": ""},
+      {"name": "butter", "amount": 1, "unit": "tbsp"},
+      {"name": "cheese", "amount": 30, "unit": "g"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1011,
+    "title": "Shrimp Tacos with Slaw",
+    "prepTime": 25,
+    "protein": 28.0,
+    "fiber": 4.5,
+    "dietTags": ["pescetarian"],
+    "allergens": ["shellfish", "gluten"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "shrimp", "amount": 200, "unit": "g"},
+      {"name": "tortilla", "amount": 4, "unit": ""},
+      {"name": "cabbage", "amount": 1, "unit": "cup"},
+      {"name": "lime", "amount": 2, "unit": ""},
+      {"name": "avocado", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 2, "unit": "cloves"},
+      {"name": "olive oil", "amount": 1, "unit": "tbsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1012,
+    "title": "Pasta Primavera",
+    "prepTime": 25,
+    "protein": 14.0,
+    "fiber": 6.0,
+    "dietTags": ["vegetarian"],
+    "allergens": ["gluten", "dairy"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "pasta", "amount": 200, "unit": "g"},
+      {"name": "zucchini", "amount": 1, "unit": ""},
+      {"name": "bell pepper", "amount": 1, "unit": ""},
+      {"name": "broccoli", "amount": 1, "unit": "cup"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "parmesan", "amount": 30, "unit": "g"}
+    ],
+    "score": 0
+  }
+]
