@@ -38,6 +38,14 @@ def create_meal_plan(current_user, data):
     if "Diets" in data:
         meal_plan["Diets"] = data["Diets"]
 
+    # Optional max prep time (in minutes)
+    if "maxPrepTime" in data and data.get("maxPrepTime") is not None:
+        try:
+            # store as integer minutes if possible
+            meal_plan["maxPrepTime"] = int(data.get("maxPrepTime"))
+        except (TypeError, ValueError):
+            meal_plan["maxPrepTime"] = data.get("maxPrepTime")
+
     result = meal_plans_collection.insert_one(meal_plan)
 
     return {
