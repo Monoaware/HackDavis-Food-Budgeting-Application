@@ -699,7 +699,7 @@
         {
           "product_id": "saf_vegeta_001",
           "brand": "Swanson",
-          "name": "Vegetable Broth",
+          "name": "Swanson Vegetable Broth",
           "size": "32 fl oz",
           "price": 2.49,
           "in_stock": true
@@ -707,7 +707,7 @@
         {
           "product_id": "saf_vegeta_002",
           "brand": "Signature Select",
-          "name": "Vegetable Broth",
+          "name": "Signature Select Vegetable Broth",
           "size": "32 fl oz",
           "price": 1.99,
           "in_stock": true
@@ -986,6 +986,304 @@
           "name": "Walnut Halves",
           "size": "8 oz",
           "price": 7.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "salmon",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "saf_salmon_001",
+          "brand": "Signature Farms",
+          "name": "Atlantic Salmon Fillet",
+          "size": "1 lb",
+          "price": 8.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_salmon_002",
+          "brand": "Open Nature",
+          "name": "Open Nature Wild Caught Alaskan Salmon",
+          "size": "1 lb",
+          "price": 11.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tofu",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_tofu_001",
+          "brand": "Nasoya",
+          "name": "Nasoya Organic Firm Tofu",
+          "size": "16 oz",
+          "price": 2.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_tofu_002",
+          "brand": "House Foods",
+          "name": "House Foods Extra Firm Tofu",
+          "size": "14 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tuna",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_tuna_001",
+          "brand": "Signature Select",
+          "name": "Chunk Light Tuna in Water",
+          "size": "5 oz",
+          "price": 0.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_tuna_002",
+          "brand": "StarKist",
+          "name": "StarKist Albacore White Tuna",
+          "size": "5 oz",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butter",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_bttr_001",
+          "brand": "Lucerne",
+          "name": "Lucerne Unsalted Butter",
+          "size": "1 lb",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_bttr_002",
+          "brand": "Kerrygold",
+          "name": "Kerrygold Pure Irish Butter",
+          "size": "8 oz",
+          "price": 5.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cheddar cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_chedar_001",
+          "brand": "Tillamook",
+          "name": "Tillamook Medium Cheddar",
+          "size": "16 oz",
+          "price": 6.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_chedar_002",
+          "brand": "Signature Select",
+          "name": "Signature Select Sharp Cheddar",
+          "size": "16 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "oats",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_oats_001",
+          "brand": "Quaker",
+          "name": "Quaker Old Fashioned Oats",
+          "size": "42 oz",
+          "price": 5.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_oats_002",
+          "brand": "Signature Select",
+          "name": "Rolled Oats",
+          "size": "42 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "flour",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_flour_001",
+          "brand": "Gold Medal",
+          "name": "Gold Medal All-Purpose Flour",
+          "size": "5 lb",
+          "price": 3.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_flour_002",
+          "brand": "Signature Select",
+          "name": "All-Purpose Flour",
+          "size": "5 lb",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chicken broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_chkbrt_001",
+          "brand": "Swanson",
+          "name": "Swanson Chicken Broth",
+          "size": "32 fl oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_chkbrt_002",
+          "brand": "Signature Select",
+          "name": "Chicken Broth",
+          "size": "32 fl oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tomato paste",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_tmpste_001",
+          "brand": "Hunt's",
+          "name": "Hunt's Tomato Paste",
+          "size": "6 oz",
+          "price": 0.89,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_tmpste_002",
+          "brand": "Muir Glen",
+          "name": "Muir Glen Organic Tomato Paste",
+          "size": "6 oz",
+          "price": 2.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peanut butter",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_pnutbt_001",
+          "brand": "Jif",
+          "name": "Jif Creamy Peanut Butter",
+          "size": "16 oz",
+          "price": 3.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_pnutbt_002",
+          "brand": "Signature Select",
+          "name": "Creamy Peanut Butter",
+          "size": "18 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "almonds",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_almond_001",
+          "brand": "Blue Diamond",
+          "name": "Blue Diamond Whole Natural Almonds",
+          "size": "6 oz",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "paprika",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_paprik_001",
+          "brand": "McCormick",
+          "name": "McCormick Paprika",
+          "size": "2.12 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cauliflower",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_caulif_001",
+          "brand": "Fresh Produce",
+          "name": "Cauliflower Head",
+          "size": "1 count",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_potato_001",
+          "brand": "Fresh Produce",
+          "name": "Russet Potatoes",
+          "size": "5 lb",
+          "price": 4.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_potato_002",
+          "brand": "Fresh Produce",
+          "name": "Gold Potatoes",
+          "size": "3 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "corn",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_corn_001",
+          "brand": "Fresh Produce",
+          "name": "Sweet Corn on the Cob",
+          "size": "1 count",
+          "price": 0.79,
           "in_stock": true
         }
       ]

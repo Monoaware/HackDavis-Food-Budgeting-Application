@@ -845,6 +845,264 @@
           "in_stock": true
         }
       ]
+    },
+    {
+      "ingredient": "salmon",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "who_salmon_001",
+          "brand": "365",
+          "name": "365 Wild Alaskan Salmon Fillet",
+          "size": "1 lb",
+          "price": 10.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_salmon_002",
+          "brand": "Wild Planet",
+          "name": "Wild Planet Wild Sockeye Salmon",
+          "size": "1 lb",
+          "price": 14.99,
+          "in_stock": false
+        }
+      ]
+    },
+    {
+      "ingredient": "tofu",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_tofu_001",
+          "brand": "365",
+          "name": "365 Organic Firm Tofu",
+          "size": "14 oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_tofu_002",
+          "brand": "Wildwood",
+          "name": "Wildwood SprouTofu Extra Firm",
+          "size": "15 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tuna",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_tuna_001",
+          "brand": "365",
+          "name": "365 Solid White Albacore Tuna in Water",
+          "size": "5 oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_tuna_002",
+          "brand": "Wild Planet",
+          "name": "Wild Planet Wild Albacore Tuna No Salt Added",
+          "size": "5 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butter",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "who_bttr_001",
+          "brand": "365",
+          "name": "365 Organic Unsalted Butter",
+          "size": "1 lb",
+          "price": 6.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_bttr_002",
+          "brand": "Kerrygold",
+          "name": "Kerrygold Grass-Fed Unsalted Butter",
+          "size": "8 oz",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cheddar cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "who_chedar_001",
+          "brand": "365",
+          "name": "365 Organic Sharp Cheddar",
+          "size": "8 oz",
+          "price": 4.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_chedar_002",
+          "brand": "Tillamook",
+          "name": "Tillamook Extra Sharp White Cheddar",
+          "size": "16 oz",
+          "price": 8.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "oats",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_oats_001",
+          "brand": "365",
+          "name": "365 Organic Old Fashioned Rolled Oats",
+          "size": "42 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "flour",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_flour_001",
+          "brand": "365",
+          "name": "365 Organic All-Purpose Flour",
+          "size": "5 lb",
+          "price": 5.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chicken broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_chkbrt_001",
+          "brand": "365",
+          "name": "365 Organic Chicken Broth",
+          "size": "32 fl oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tomato paste",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_tmpste_001",
+          "brand": "365",
+          "name": "365 Organic Tomato Paste",
+          "size": "6 oz",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peanut butter",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_pnutbt_001",
+          "brand": "365",
+          "name": "365 Organic Creamy Peanut Butter",
+          "size": "16 oz",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "who_pnutbt_002",
+          "brand": "Justin's",
+          "name": "Justin's Classic Peanut Butter",
+          "size": "16 oz",
+          "price": 8.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "almonds",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_almond_001",
+          "brand": "365",
+          "name": "365 Organic Raw Almonds",
+          "size": "10 oz",
+          "price": 8.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "paprika",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "who_paprik_001",
+          "brand": "365",
+          "name": "365 Organic Paprika",
+          "size": "2.3 oz",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cauliflower",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "who_caulif_001",
+          "brand": "365",
+          "name": "365 Organic Cauliflower Head",
+          "size": "1 count",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "who_potato_001",
+          "brand": "365",
+          "name": "365 Organic Russet Potatoes",
+          "size": "5 lb",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "corn",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "who_corn_001",
+          "brand": "Organic Produce",
+          "name": "Organic Sweet Corn",
+          "size": "1 count",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
     }
   ]
 }

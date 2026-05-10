@@ -837,6 +837,248 @@
           "in_stock": true
         }
       ]
+    },
+    {
+      "ingredient": "salmon",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "tra_salmon_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Wild Alaskan Sockeye Salmon",
+          "size": "1 lb",
+          "price": 9.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tra_salmon_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Frozen Salmon Fillets",
+          "size": "1 lb",
+          "price": 7.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tofu",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_tofu_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Firm Tofu",
+          "size": "14 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tuna",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_tuna_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Albacore Tuna in Water",
+          "size": "5 oz",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butter",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_bttr_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Unsalted Butter",
+          "size": "1 lb",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cheddar cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_chedar_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Unexpected Cheddar",
+          "size": "8 oz",
+          "price": 3.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tra_chedar_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Sharp Cheddar",
+          "size": "16 oz",
+          "price": 5.49,
+          "in_stock": false
+        }
+      ]
+    },
+    {
+      "ingredient": "oats",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_oats_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Rolled Oats",
+          "size": "42 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "flour",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_flour_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's All-Purpose Flour",
+          "size": "5 lb",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chicken broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_chkbrt_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Low Sodium Chicken Broth",
+          "size": "32 fl oz",
+          "price": 2.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tomato paste",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_tmpste_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Tomato Paste",
+          "size": "4.5 oz",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peanut butter",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_pnutbt_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Creamy Salted Peanut Butter",
+          "size": "16 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "almonds",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_almond_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Raw Almonds",
+          "size": "16 oz",
+          "price": 6.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "paprika",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_paprik_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Sweet Paprika",
+          "size": "2 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cauliflower",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_caulif_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Cauliflower",
+          "size": "1 count",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tra_caulif_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Riced Cauliflower",
+          "size": "12 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_potato_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Petite Yukon Gold Potatoes",
+          "size": "1.5 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "corn",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_corn_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Corn on the Cob",
+          "size": "3 count",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tra_corn_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Frozen Roasted Corn",
+          "size": "16 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
     }
   ]
 }

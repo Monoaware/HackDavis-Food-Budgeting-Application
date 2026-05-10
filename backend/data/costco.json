@@ -837,6 +837,240 @@
           "in_stock": true
         }
       ]
+    },
+    {
+      "ingredient": "salmon",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "cos_salmon_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Wild Alaskan Salmon",
+          "size": "3 lb pack",
+          "price": 29.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "cos_salmon_002",
+          "brand": "Aquastar",
+          "name": "Aquastar Atlantic Salmon Portions",
+          "size": "3 lb",
+          "price": 21.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tofu",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_tofu_001",
+          "brand": "Nasoya",
+          "name": "Nasoya Organic Firm Tofu",
+          "size": "4 x 16 oz",
+          "price": 9.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tuna",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_tuna_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Albacore Tuna in Water",
+          "size": "8 x 7 oz",
+          "price": 16.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butter",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "cos_bttr_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Salted Butter",
+          "size": "4 x 1 lb",
+          "price": 14.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "cos_bttr_002",
+          "brand": "Kerrygold",
+          "name": "Kerrygold Pure Irish Butter",
+          "size": "3 x 1 lb",
+          "price": 16.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cheddar cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "cos_chedar_001",
+          "brand": "Tillamook",
+          "name": "Tillamook Sharp Cheddar Cheese",
+          "size": "2 x 2 lb",
+          "price": 16.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "oats",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_oats_001",
+          "brand": "Quaker",
+          "name": "Quaker Old Fashioned Oats",
+          "size": "10 lb",
+          "price": 12.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "flour",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_flour_001",
+          "brand": "Gold Medal",
+          "name": "Gold Medal All-Purpose Flour",
+          "size": "25 lb",
+          "price": 14.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chicken broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_chkbrt_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Chicken Broth",
+          "size": "6 x 32 fl oz",
+          "price": 14.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "tomato paste",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_tmpste_001",
+          "brand": "Muir Glen",
+          "name": "Muir Glen Organic Tomato Paste",
+          "size": "12 x 6 oz",
+          "price": 17.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peanut butter",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_pnutbt_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Creamy Peanut Butter",
+          "size": "2 x 28 oz",
+          "price": 12.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "almonds",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_almond_001",
+          "brand": "Kirkland Signature",
+          "name": "Kirkland Signature Whole Almonds",
+          "size": "3 lb",
+          "price": 16.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "paprika",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "cos_paprik_001",
+          "brand": "McCormick",
+          "name": "McCormick Paprika",
+          "size": "18 oz",
+          "price": 7.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cauliflower",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "cos_caulif_001",
+          "brand": "Fresh Produce",
+          "name": "Cauliflower Florets",
+          "size": "3 lb",
+          "price": 6.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "cos_potato_001",
+          "brand": "Fresh Produce",
+          "name": "Russet Potatoes",
+          "size": "10 lb",
+          "price": 6.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "cos_potato_002",
+          "brand": "Fresh Produce",
+          "name": "Yukon Gold Potatoes",
+          "size": "5 lb",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "corn",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "cos_corn_001",
+          "brand": "Fresh Produce",
+          "name": "Sweet Corn on the Cob",
+          "size": "8 count",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
     }
   ]
 }
