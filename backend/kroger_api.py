@@ -20,6 +20,7 @@ def _get_token():
     global _token, _token_expiry
     if _token and time.time() < _token_expiry - 60:
         return _token
+    print("[KROGER] Fetching new OAuth token...")
     resp = requests.post(
         f"{_BASE_URL}/connect/oauth2/token",
         data={"grant_type": "client_credentials", "scope": "product.compact"},
@@ -30,6 +31,7 @@ def _get_token():
     data = resp.json()
     _token = data["access_token"]
     _token_expiry = time.time() + data["expires_in"]
+    print("[KROGER] Token OK")
     return _token
 
 
@@ -75,6 +77,7 @@ def _fetch_options(ingredient_name):
             size = item.get("size", "")
             if regular is not None and size:
                 options.append((size, regular))
+    print(f"[KROGER] '{ingredient_name}' → {len(options)} options: {options}")
     return options
 
 
