@@ -6,6 +6,9 @@ interface Meal {
   image?: string
   servings?: number
   prepTime?: number
+  protein?: number
+  fiber?: number
+  calories?: number
   ingredients?: string[]
   sourceUrl?: string
 }
@@ -194,9 +197,24 @@ export default function MealPage({ planId, onBack }: Props) {
                         ⏱ {meal.prepTime} min
                       </p>
                     )}
-                    {meal.servings != null && (
+                    {meal.calories != null && (
                       <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
-                        🍽 {meal.servings} servings
+                        🔥 {Math.round(meal.calories)} cal
+                      </p>
+                    )}
+                    {meal.protein != null && (
+                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
+                        💪 {meal.protein.toFixed(1)}g protein
+                      </p>
+                    )}
+                    {meal.fiber != null && (
+                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
+                        🌿 {meal.fiber.toFixed(1)}g fiber
+                      </p>
+                    )}
+                    {meal.servings != null && meal.servings > 1 && (
+                      <p style={{ margin: '0.5rem 0 0', fontSize: '0.75rem', color: 'var(--rust)', fontStyle: 'italic' }}>
+                        Makes {meal.servings} servings — you can make just a portion
                       </p>
                     )}
                   </div>
