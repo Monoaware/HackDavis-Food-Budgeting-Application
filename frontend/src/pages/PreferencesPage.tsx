@@ -21,7 +21,7 @@ interface Props {
 
 export default function PreferencesPage({ onBack, onSubmit }: Props) {
   const [numMeals, setNumMeals] = useState(3)
-  const [budget, setBudget] = useState('')
+  const [budget, setBudget] = useState('30')
   const [intolerances, setIntolerances] = useState<string[]>([])
   const [diets, setDiets] = useState<string[]>([])
   const [protein, setProtein] = useState('')
@@ -71,7 +71,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
           {/* ── Plan basics ── */}
           <div className="pref-section">
             <h2 className="pref-section-title">Plan basics</h2>
-            <p className="pref-section-sub">How many meals and what's your budget for the week?</p>
+            <p className="pref-section-sub">Please select the number of meals you’d like to plan for, then allocate a corresponding budget.</p>
             <div className="row-2">
               <div className="field">
                 <label>Number of meals</label>
@@ -101,7 +101,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                   />
                 </div>
               <div className="field">
-                <label htmlFor="budget">Weekly budget</label>
+                <label htmlFor="budget">Budget</label>
                 <div className="input-prefix-wrap">
                   <span className="input-prefix">$</span>
                   <input
@@ -160,7 +160,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
             <p className="pref-section-sub">Set daily targets to help rank your meal plans.</p>
             <div className="row-2">
               <div className="field">
-                <label htmlFor="protein">Protein (g / day)</label>
+                <label htmlFor="protein">Protein (grams)</label>
                 <input
                   id="protein"
                   type="number"
@@ -171,7 +171,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                 />
               </div>
               <div className="field">
-                <label htmlFor="fiber">Fiber (g / day)</label>
+                <label htmlFor="fiber">Fiber (grams)</label>
                 <input
                   id="fiber"
                   type="number"
@@ -187,7 +187,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
           <div className="pref-submit-row">
             {error && <p className="form-error" style={{ marginBottom: '0.75rem' }}>{error}</p>}
             <button type="submit" className="btn-submit" disabled={loading}>
-              {loading ? 'Finding meals…' : 'Generate meal plan →'}
+              {loading ? <><span className="btn-spinner" />Finding meals…</> : 'Generate meal plan →'}
             </button>
           </div>
 

@@ -17,15 +17,26 @@ interface MealPlan {
 }
 
 interface Props {
+  firstName: string
+  lastName: string
   onSignOut: () => void
   onCreatePlan: () => void
   onViewPlan: (planId: string) => void
+  onDeletePlan?: (planId: string) => void
 }
 
-export default function DashboardPage({ onSignOut, onCreatePlan, onViewPlan }: Props) {
+export default function DashboardPage({ firstName, lastName, onSignOut, onCreatePlan, onViewPlan }: Props) {
   const [plans, setPlans] = useState<MealPlan[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+
+  async function handleDelete(planId: string) {
+    const res = await fetch(`/api/meal-plans/${planId}`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    })
+    if (res.ok) setPlans(prev => prev.filter(p => p._id !== planId))
+  }
 
   useEffect(() => {
     async function fetchPlans() {
@@ -62,8 +73,8 @@ export default function DashboardPage({ onSignOut, onCreatePlan, onViewPlan }: P
       </nav>
 
       <div className="dash-hero">
-        <h1 className="dash-greeting">Your meal plans.</h1>
-        <p className="dash-sub">Ready to plan your next week?</p>
+        <h1 className="dash-greeting">Hi, {firstName} {lastName}.</h1>
+        <p className="dash-sub">Here are your meal plans.</p>
         <button className="btn-new-plan" onClick={onCreatePlan}>
           <PlusIcon />
           Create new plan
@@ -86,7 +97,7 @@ export default function DashboardPage({ onSignOut, onCreatePlan, onViewPlan }: P
         {!loading && plans.length > 0 && (
           <div className="plan-grid">
             {plans.map((plan, i) => (
-              <PlanCard key={plan._id} plan={plan} delay={i * 0.07} onView={onViewPlan} />
+              <PlanCard key={plan._id} plan={plan} delay={i * 0.07} onView={onViewPlan} onDelete={handleDelete} />
             ))}
           </div>
         )}
@@ -95,7 +106,13 @@ export default function DashboardPage({ onSignOut, onCreatePlan, onViewPlan }: P
   )
 }
 
-function PlanCard({ plan, delay, onView }: { plan: MealPlan; delay: number; onView: (planId: string) => void }) {
+function PlanCard({ plan, delay, onView, onDelete }: { plan: MealPlan; delay: number; onView: (planId: string) => void; onDelete: (planId: string) => Promise<void> }) {
+  const [deleting, setDeleting] = useState(false)
+
+  async function handleDelete() {
+    setDeleting(true)
+    await onDelete(plan._id)
+  }
   const date = new Date(plan.created_at).toLocaleDateString('en-US', {
     month: 'short', day: 'numeric', year: 'numeric',
   })
@@ -147,7 +164,14 @@ function PlanCard({ plan, delay, onView }: { plan: MealPlan; delay: number; onVi
       )}
 
       <div className="plan-card-footer">
-        <div />
+        <button
+          className="btn-delete-plan"
+          onClick={handleDelete}
+          disabled={deleting}
+          aria-label="Delete plan"
+        >
+          {deleting ? '…' : <TrashIcon />}
+        </button>
         <button className="btn-view-plan" onClick={() => onView(plan._id)}>View</button>
       </div>
     </div>
@@ -179,6 +203,17 @@ function MealThumbs({ meals }: { meals?: Array<{ title: string; image?: string }
         <div className="meal-thumb-overflow">+{overflow}</div>
       )}
     </div>
+  )
+}
+
+function TrashIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="3 6 5 6 21 6"/>
+      <path d="M19 6l-1 14H6L5 6"/>
+      <path d="M10 11v6M14 11v6"/>
+      <path d="M9 6V4h6v2"/>
+    </svg>
   )
 }
 

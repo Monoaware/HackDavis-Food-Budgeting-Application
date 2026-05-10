@@ -4,7 +4,7 @@ from spoonacular import fetch_recipes
 from optimizer import generate_meal_plans
 from gemini_ranker import rank_meal_plans
 from auth import signup_user, login_user, token_required
-from meals import create_meal_plan, get_meal_plans, get_meal_plan
+from meals import create_meal_plan, get_meal_plans, get_meal_plan, delete_meal_plan
 
 app = Flask(__name__)
 CORS(app)
@@ -45,6 +45,13 @@ def fetch_meal_plans(current_user):
 @token_required
 def fetch_meal_plan(current_user, meal_plan_id):
     body, status = get_meal_plan(current_user, meal_plan_id)
+    return jsonify(body), status
+
+
+@app.route("/meal-plans/<meal_plan_id>", methods=["DELETE"])
+@token_required
+def remove_meal_plan(current_user, meal_plan_id):
+    body, status = delete_meal_plan(current_user, meal_plan_id)
     return jsonify(body), status
 
 
