@@ -70,14 +70,28 @@ def recommend():
                 "error": "No meal plans could be generated. Try adjusting your filters or increasing your budget."
             }), 422
 
-        plans = rank_meal_plans(plans, meal_plan)
-
         return jsonify({"plans": plans})
 
     except Exception as e:
-        print(str(e))
         return jsonify({
             "error": "Failed to generate recommendations.",
+            "details": str(e)
+        }), 500
+
+
+@app.route("/rank", methods=["POST"])
+def rank():
+    try:
+        body = request.get_json()
+        plans = body.get("plans", [])
+        ranking_query = body.get("rankingQuery", "")
+
+        ranked = rank_meal_plans(plans, {"rankingQuery": ranking_query})
+        return jsonify({"plans": ranked})
+
+    except Exception as e:
+        return jsonify({
+            "error": "Failed to rank plans.",
             "details": str(e)
         }), 500
 
