@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import '../styles/preferences.css'
 
-const ALLERGIES = ['Dairy', 'Eggs', 'Gluten', 'Peanuts', 'Tree Nuts', 'Shellfish', 'Soy', 'Fish']
-const DIETS = ['Vegetarian', 'Vegan', 'Gluten-Free', 'Keto', 'Paleo', 'Low-Carb', 'Halal', 'Kosher']
+const INTOLERANCES = ['Dairy', 'Egg', 'Gluten', 'Grain', 'Peanut', 'Seafood', 'Sesame', 'Shellfish', 'Soy', 'Sulfite', 'Tree Nut', 'Wheat']
+const DIETS = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian', 'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Low FODMAP', 'Whole30']
 
 export interface PlanPreferences {
   numMeals: number
   budget: string
-  allergies: string[]
+  intolerances: string[]
   diets: string[]
   proteinGoal: string
   fiberGoal: string
@@ -21,7 +21,7 @@ interface Props {
 export default function PreferencesPage({ onBack, onSubmit }: Props) {
   const [numMeals, setNumMeals] = useState(3)
   const [budget, setBudget] = useState('')
-  const [allergies, setAllergies] = useState<string[]>([])
+  const [intolerances, setIntolerances] = useState<string[]>([])
   const [diets, setDiets] = useState<string[]>([])
   const [protein, setProtein] = useState('')
   const [fiber, setFiber] = useState('')
@@ -32,7 +32,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    onSubmit({ numMeals, budget, allergies, diets, proteinGoal: protein, fiberGoal: fiber })
+    onSubmit({ numMeals, budget, intolerances, diets, proteinGoal: protein, fiberGoal: fiber })
   }
 
   return (
@@ -87,17 +87,17 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
             </div>
           </div>
 
-          {/* ── Allergies ── */}
+          {/* ── Intolerances ── */}
           <div className="pref-section">
-            <h2 className="pref-section-title">Allergies</h2>
+            <h2 className="pref-section-title">Intolerances</h2>
             <p className="pref-section-sub">Select any ingredients to avoid entirely.</p>
             <div className="pill-group">
-              {ALLERGIES.map(a => (
+              {INTOLERANCES.map(a => (
                 <button
                   key={a}
                   type="button"
-                  className={`pill${allergies.includes(a) ? ' active' : ''}`}
-                  onClick={() => togglePill(allergies, a, setAllergies)}
+                  className={`pill${intolerances.includes(a) ? ' active' : ''}`}
+                  onClick={() => togglePill(intolerances, a, setIntolerances)}
                 >
                   {a}
                 </button>
