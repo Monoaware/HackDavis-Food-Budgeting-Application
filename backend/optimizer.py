@@ -1,5 +1,5 @@
 from itertools import combinations
-from prices import calculate_cost_per_serving
+from prices import cheapest_cost_per_serving
 
 _MAX_CANDIDATES = 15
 
@@ -71,7 +71,7 @@ def generate_meal_plans(recipes, user, num_plans=5):
 
     for recipe in allowed:
         if "costPerServing" not in recipe:
-            recipe["costPerServing"] = calculate_cost_per_serving(recipe)
+            recipe["costPerServing"] = cheapest_cost_per_serving(recipe)
 
     candidates = allowed[:_MAX_CANDIDATES]
 

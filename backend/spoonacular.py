@@ -30,6 +30,10 @@ def _extract_nutrient(nutrients, name):
 def _normalize_recipe(raw):
     nutrition = raw.get("nutrition", {})
     nutrients = nutrition.get("nutrients", [])
+    # Spoonacular returns total nutrition for the whole recipe; divide by servings
+    # to get per-serving values used for nutritional scoring.
+    servings = max(raw.get("servings", 1), 1)
+    # Ingredient amounts are totals for the whole recipe (kept as-is for grocery shopping).
     ingredients = [
         {
             "name": ing.get("name", ""),
@@ -42,10 +46,11 @@ def _normalize_recipe(raw):
         "id": raw.get("id"),
         "title": raw.get("title", ""),
         "prepTime": raw.get("readyInMinutes", 0),
-        "protein": _extract_nutrient(nutrients, "Protein"),
-        "fiber": _extract_nutrient(nutrients, "Fiber"),
+        "protein": round(_extract_nutrient(nutrients, "Protein") / servings, 2),
+        "fiber": round(_extract_nutrient(nutrients, "Fiber") / servings, 2),
+        "servings": servings,
         "dietTags": raw.get("diets", []),
-        "allergens": [],  # Spoonacular filters these out server-side; field kept for post-filter
+        "allergens": [],
         "image": raw.get("image", ""),
         "sourceUrl": raw.get("sourceUrl", ""),
         "ingredients": ingredients,
