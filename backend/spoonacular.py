@@ -29,7 +29,16 @@ def _cache_key(meal_plan):
         "allergens": sorted(meal_plan.get("allergens", [])),
         "diet": meal_plan.get("dietaryTags", [""])[0] if meal_plan.get("dietaryTags") else "",
         "maxPrepTime": meal_plan.get("maxPrepTime"),
+        "minProtein": _min_protein_per_serving(meal_plan),
     }, sort_keys=True)
+
+
+def _min_protein_per_serving(meal_plan):
+    protein_goal = meal_plan.get("proteinGoal", 0)
+    num_meals = meal_plan.get("numMeals", 3)
+    if protein_goal > 0 and num_meals > 0:
+        return round(protein_goal / num_meals * 0.5, 1)
+    return None
 
 
 def _extract_nutrient(nutrients, name):
@@ -100,6 +109,12 @@ def fetch_recipes(meal_plan):
         params["diet"] = dietary_tags[0]
     if max_prep_time is not None:
         params["maxReadyTime"] = max_prep_time
+
+    min_protein = _min_protein_per_serving(meal_plan)
+    if min_protein:
+        params["minProtein"] = min_protein
+        params["sort"] = "protein"
+        params["sortDirection"] = "desc"
 
     try:
         response = requests.get(BASE_URL, params=params, timeout=15)
