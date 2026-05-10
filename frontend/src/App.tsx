@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import AuthPage from './pages/AuthPage'
+import DashboardPage from './pages/DashboardPage'
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'))
 
+  function handleSignOut() {
+    localStorage.removeItem('token')
+    setToken(null)
+  }
+
   if (token) {
-    // TODO: replace with PreferencesPage once built
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'DM Sans, sans-serif' }}>
-        <p>Logged in. Preferences page coming soon.</p>
-      </div>
-    )
+    return <DashboardPage onSignOut={handleSignOut} />
   }
 
   return <AuthPage onSuccess={setToken} />
