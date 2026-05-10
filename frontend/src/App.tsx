@@ -17,6 +17,8 @@ type Page = 'dashboard' | 'preferences' | 'ranking' | 'results' | 'meal'
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'))
+  const [firstName, setFirstName] = useState(localStorage.getItem('firstName') ?? '')
+  const [lastName, setLastName] = useState(localStorage.getItem('lastName') ?? '')
   const [page, setPage] = useState<Page>('dashboard')
   const [results, setResults] = useState<Plan[]>([])
   const [lastPrefs, setLastPrefs] = useState<PlanPreferences | null>(null)
@@ -99,7 +101,13 @@ export default function App() {
     setPage('dashboard')
   }
 
-  if (!token) return <AuthPage onSuccess={setToken} />
+  if (!token) return <AuthPage onSuccess={(tok, first, last) => {
+    localStorage.setItem('firstName', first)
+    localStorage.setItem('lastName', last)
+    setFirstName(first)
+    setLastName(last)
+    setToken(tok)
+  }} />
 
   if (page === 'preferences') {
     return (
@@ -141,6 +149,8 @@ export default function App() {
 
   return (
     <DashboardPage
+      firstName={firstName}
+      lastName={lastName}
       onSignOut={handleSignOut}
       onCreatePlan={() => setPage('preferences')}
       onViewPlan={(id) => {

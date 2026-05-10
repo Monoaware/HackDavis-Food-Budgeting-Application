@@ -6,7 +6,7 @@ import '../styles/auth.css'
 type Tab = 'login' | 'signup'
 
 interface Props {
-  onSuccess: (token: string) => void
+  onSuccess: (token: string, firstName: string, lastName: string) => void
 }
 
 export default function AuthPage({ onSuccess }: Props) {

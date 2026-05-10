@@ -97,7 +97,9 @@ def login_user(email, password):
 
     return {
         "message": "Login successful",
-        "token": token
+        "token": token,
+        "first_name": user.get("first_name", ""),
+        "last_name": user.get("last_name", ""),
     }, 200
 
 def token_required(f):

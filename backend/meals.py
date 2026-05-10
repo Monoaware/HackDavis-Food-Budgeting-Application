@@ -61,6 +61,19 @@ def get_meal_plans(current_user):
     return {"meal_plans": [_serialize(p) for p in plans]}, 200
 
 
+def delete_meal_plan(current_user, meal_plan_id):
+    try:
+        result = meal_plans_collection.delete_one({
+            "_id": ObjectId(meal_plan_id),
+            "user_email": current_user["email"]
+        })
+        if result.deleted_count == 0:
+            return {"error": "Meal plan not found"}, 404
+        return {"message": "Meal plan deleted"}, 200
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+
 def get_meal_plan(current_user, meal_plan_id):
     try:
         plan = meal_plans_collection.find_one({

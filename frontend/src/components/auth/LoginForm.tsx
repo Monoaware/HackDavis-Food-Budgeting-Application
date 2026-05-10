@@ -2,7 +2,7 @@ import { useState } from 'react'
 import PasswordField from './PasswordField'
 
 interface Props {
-  onSuccess: (token: string) => void
+  onSuccess: (token: string, firstName: string, lastName: string) => void
   successMessage?: string
 }
 
@@ -27,7 +27,7 @@ export default function LoginForm({ onSuccess, successMessage }: Props) {
         setError(data.error || 'Login failed.')
       } else {
         localStorage.setItem('token', data.token)
-        onSuccess(data.token)
+        onSuccess(data.token, data.first_name ?? '', data.last_name ?? '')
       }
     } catch {
       setError('Network error. Please try again.')
