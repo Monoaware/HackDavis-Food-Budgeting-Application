@@ -7,6 +7,7 @@ interface Meal {
   servings?: number
   prepTime?: number
   ingredients?: string[]
+  sourceUrl?: string
 }
 
 interface MealPlan {
@@ -95,7 +96,7 @@ export default function MealPage({ planId, onBack }: Props) {
           </div>
           <div style={{ textAlign: 'right' }}>
             <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              {plan.budget != null ? `$${plan.budget.toFixed(2)}` : 'No budget'}
+              {plan.totalCost != null ? `$${plan.totalCost.toFixed(2)}` : plan.budget != null ? `$${plan.budget.toFixed(2)}` : '—'}
             </div>
             {plan.suggestedStore && (
               <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--muted)' }}>
@@ -164,12 +165,16 @@ export default function MealPage({ planId, onBack }: Props) {
               {plan.meals.map((meal, i) => (
                 <div
                   key={i}
+                  onClick={() => meal.sourceUrl && window.open(meal.sourceUrl, '_blank')}
                   style={{
                     border: '1px solid var(--border)',
                     borderRadius: '8px',
                     overflow: 'hidden',
                     transition: 'transform 0.2s, box-shadow 0.2s',
+                    cursor: meal.sourceUrl ? 'pointer' : 'default',
                   }}
+                  onMouseEnter={e => { if (meal.sourceUrl) (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
                 >
                   {meal.image && (
                     <img
