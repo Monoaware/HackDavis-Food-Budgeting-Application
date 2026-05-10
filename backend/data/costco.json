@@ -1,0 +1,93 @@
+{
+  "request_id": "req_costco_005",
+  "store_id": "costco_3394",
+  "store_name": "Costco",
+  "distance_miles": 4.8,
+  "currency": "USD",
+  "last_updated": "2026-05-09T10:19:00-07:00",
+  "catalogue": [
+    {
+      "ingredient": "milk",
+      "category": "dairy",
+      "products": [
+        {"product_id": "cos_milk_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Whole Milk", "size": "2 gallons", "price": 8.79, "in_stock": true},
+        {"product_id": "cos_milk_002", "brand": "Horizon Organic", "name": "Horizon Organic Whole Milk", "size": "3 x 0.5 gallon", "price": 14.99, "in_stock": true},
+        {"product_id": "cos_milk_003", "brand": "Kirkland Signature", "name": "Kirkland Signature Organic Vanilla Soy Beverage", "size": "12 x 32 fl oz", "price": 17.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "eggs",
+      "category": "dairy",
+      "products": [
+        {"product_id": "cos_eggs_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Large Eggs", "size": "24 count", "price": 6.49, "in_stock": true},
+        {"product_id": "cos_eggs_002", "brand": "Vital Farms", "name": "Vital Farms Pasture-Raised Eggs", "size": "18 count", "price": 9.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "chicken breast",
+      "category": "meat",
+      "products": [
+        {"product_id": "cos_chicken_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Boneless Skinless Chicken Breast", "size": "6 lb pack", "price": 23.94, "in_stock": true},
+        {"product_id": "cos_chicken_002", "brand": "Foster Farms", "name": "Foster Farms Chicken Breast", "size": "5 lb pack", "price": 24.95, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "ground beef",
+      "category": "meat",
+      "products": [
+        {"product_id": "cos_beef_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Ground Beef", "size": "5 lb pack", "price": 24.95, "in_stock": true},
+        {"product_id": "cos_beef_002", "brand": "Kirkland Signature", "name": "Kirkland Signature Organic Ground Beef", "size": "4 lb pack", "price": 31.96, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "pasta",
+      "category": "pantry",
+      "products": [
+        {"product_id": "cos_pasta_001", "brand": "Barilla", "name": "Barilla Spaghetti Multipack", "size": "8 x 16 oz", "price": 9.99, "in_stock": true},
+        {"product_id": "cos_pasta_002", "brand": "Garofalo", "name": "Garofalo Organic Pasta Variety Pack", "size": "6 x 16 oz", "price": 10.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "rice",
+      "category": "pantry",
+      "products": [
+        {"product_id": "cos_rice_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Jasmine Rice", "size": "25 lb", "price": 18.99, "in_stock": true},
+        {"product_id": "cos_rice_002", "brand": "Royal", "name": "Royal Basmati Rice", "size": "20 lb", "price": 21.99, "in_stock": true},
+        {"product_id": "cos_rice_003", "brand": "Seeds of Change", "name": "Seeds of Change Organic Quinoa & Brown Rice", "size": "6 x 8.5 oz", "price": 12.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "black beans",
+      "category": "pantry",
+      "products": [
+        {"product_id": "cos_beans_001", "brand": "S&W", "name": "S&W Black Beans", "size": "8 x 15 oz cans", "price": 7.99, "in_stock": true},
+        {"product_id": "cos_beans_002", "brand": "Kirkland Signature", "name": "Kirkland Signature Organic Black Beans", "size": "8 x 15 oz cans", "price": 9.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "tomatoes",
+      "category": "produce",
+      "products": [
+        {"product_id": "cos_tomato_001", "brand": "Fresh Produce", "name": "Roma Tomatoes", "size": "6 lb box", "price": 7.99, "in_stock": true},
+        {"product_id": "cos_tomato_002", "brand": "NatureSweet", "name": "NatureSweet Cherubs Tomatoes", "size": "2 lb container", "price": 6.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "onion",
+      "category": "produce",
+      "products": [
+        {"product_id": "cos_onion_001", "brand": "Fresh Produce", "name": "Yellow Onions", "size": "10 lb bag", "price": 6.99, "in_stock": true},
+        {"product_id": "cos_onion_002", "brand": "Fresh Produce", "name": "Red Onions", "size": "10 lb bag", "price": 7.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "olive oil",
+      "category": "pantry",
+      "products": [
+        {"product_id": "cos_oil_001", "brand": "Kirkland Signature", "name": "Kirkland Signature Extra Virgin Olive Oil", "size": "2 liter", "price": 15.99, "in_stock": true},
+        {"product_id": "cos_oil_002", "brand": "Bertolli", "name": "Bertolli Extra Virgin Olive Oil", "size": "2 x 1 liter", "price": 18.99, "in_stock": true},
+        {"product_id": "cos_oil_003", "brand": "California Olive Ranch", "name": "California Olive Ranch Extra Virgin Olive Oil", "size": "1.4 liter", "price": 19.99, "in_stock": false}
+      ]
+    }
+  ]
+}

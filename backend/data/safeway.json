@@ -1,0 +1,98 @@
+{
+  "request_id": "req_safeway_001",
+  "store_id": "safeway_1042",
+  "store_name": "Safeway",
+  "distance_miles": 1.3,
+  "currency": "USD",
+  "last_updated": "2026-05-09T10:15:00-07:00",
+  "catalogue": [
+    {
+      "ingredient": "milk",
+      "category": "dairy",
+      "products": [
+        {"product_id": "sfw_milk_001", "brand": "Lucerne", "name": "Lucerne Whole Milk", "size": "1 gallon", "price": 4.79, "in_stock": true},
+        {"product_id": "sfw_milk_002", "brand": "Horizon Organic", "name": "Horizon Organic Whole Milk", "size": "0.5 gallon", "price": 5.99, "in_stock": true},
+        {"product_id": "sfw_milk_003", "brand": "Fairlife", "name": "Fairlife 2% Ultra-Filtered Milk", "size": "52 fl oz", "price": 5.49, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "eggs",
+      "category": "dairy",
+      "products": [
+        {"product_id": "sfw_eggs_001", "brand": "Lucerne", "name": "Lucerne Large Grade AA Eggs", "size": "12 count", "price": 3.99, "in_stock": true},
+        {"product_id": "sfw_eggs_002", "brand": "Eggland's Best", "name": "Eggland's Best Cage-Free Large Eggs", "size": "12 count", "price": 5.49, "in_stock": true},
+        {"product_id": "sfw_eggs_003", "brand": "Open Nature", "name": "Open Nature Pasture Raised Eggs", "size": "12 count", "price": 6.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "chicken breast",
+      "category": "meat",
+      "products": [
+        {"product_id": "sfw_chicken_001", "brand": "Foster Farms", "name": "Foster Farms Boneless Skinless Chicken Breast", "size": "1 lb", "price": 5.99, "in_stock": true},
+        {"product_id": "sfw_chicken_002", "brand": "Open Nature", "name": "Open Nature Air Chilled Chicken Breast", "size": "1 lb", "price": 7.49, "in_stock": true},
+        {"product_id": "sfw_chicken_003", "brand": "Signature Farms", "name": "Signature Farms Thin Sliced Chicken Breast", "size": "1 lb", "price": 6.79, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "ground beef",
+      "category": "meat",
+      "products": [
+        {"product_id": "sfw_beef_001", "brand": "Signature Farms", "name": "Signature Farms Ground Beef 80/20", "size": "1 lb", "price": 6.49, "in_stock": true},
+        {"product_id": "sfw_beef_002", "brand": "Open Nature", "name": "Open Nature Grass Fed Ground Beef 85/15", "size": "1 lb", "price": 8.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "pasta",
+      "category": "pantry",
+      "products": [
+        {"product_id": "sfw_pasta_001", "brand": "Barilla", "name": "Barilla Spaghetti", "size": "16 oz", "price": 1.99, "in_stock": true},
+        {"product_id": "sfw_pasta_002", "brand": "Signature Select", "name": "Signature Select Penne Pasta", "size": "16 oz", "price": 1.49, "in_stock": true},
+        {"product_id": "sfw_pasta_003", "brand": "Banza", "name": "Banza Chickpea Pasta", "size": "8 oz", "price": 3.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "rice",
+      "category": "pantry",
+      "products": [
+        {"product_id": "sfw_rice_001", "brand": "Mahatma", "name": "Mahatma Long Grain White Rice", "size": "2 lb", "price": 3.49, "in_stock": true},
+        {"product_id": "sfw_rice_002", "brand": "Lundberg", "name": "Lundberg Organic Brown Rice", "size": "2 lb", "price": 6.49, "in_stock": true},
+        {"product_id": "sfw_rice_003", "brand": "Signature Select", "name": "Signature Select Jasmine Rice", "size": "5 lb", "price": 6.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "black beans",
+      "category": "pantry",
+      "products": [
+        {"product_id": "sfw_beans_001", "brand": "S&W", "name": "S&W Black Beans", "size": "15 oz can", "price": 1.49, "in_stock": true},
+        {"product_id": "sfw_beans_002", "brand": "Signature Select", "name": "Signature Select Black Beans", "size": "15 oz can", "price": 1.19, "in_stock": true},
+        {"product_id": "sfw_beans_003", "brand": "Bush's Best", "name": "Bush's Best Reduced Sodium Black Beans", "size": "15 oz can", "price": 1.69, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "tomatoes",
+      "category": "produce",
+      "products": [
+        {"product_id": "sfw_tomato_001", "brand": "Fresh Produce", "name": "Roma Tomatoes", "size": "1 lb", "price": 1.99, "in_stock": true},
+        {"product_id": "sfw_tomato_002", "brand": "Fresh Produce", "name": "Grape Tomatoes", "size": "1 pint", "price": 3.49, "in_stock": true},
+        {"product_id": "sfw_tomato_003", "brand": "NatureSweet", "name": "NatureSweet Cherubs Tomatoes", "size": "10 oz", "price": 4.29, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "onion",
+      "category": "produce",
+      "products": [
+        {"product_id": "sfw_onion_001", "brand": "Fresh Produce", "name": "Yellow Onion", "size": "1 lb", "price": 1.29, "in_stock": true},
+        {"product_id": "sfw_onion_002", "brand": "Fresh Produce", "name": "Red Onion", "size": "1 lb", "price": 1.59, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "olive oil",
+      "category": "pantry",
+      "products": [
+        {"product_id": "sfw_oil_001", "brand": "Bertolli", "name": "Bertolli Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 8.99, "in_stock": true},
+        {"product_id": "sfw_oil_002", "brand": "California Olive Ranch", "name": "California Olive Ranch Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 12.99, "in_stock": true},
+        {"product_id": "sfw_oil_003", "brand": "Signature Select", "name": "Signature Select Olive Oil", "size": "25.5 fl oz", "price": 10.49, "in_stock": true}
+      ]
+    }
+  ]
+}

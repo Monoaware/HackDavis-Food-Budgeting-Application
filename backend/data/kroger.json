@@ -1,0 +1,99 @@
+{
+  "request_id": "req_kroger_004",
+  "store_id": "kroger_5129",
+  "store_name": "Kroger",
+  "distance_miles": 3.1,
+  "currency": "USD",
+  "last_updated": "2026-05-09T10:18:00-07:00",
+  "catalogue": [
+    {
+      "ingredient": "milk",
+      "category": "dairy",
+      "products": [
+        {"product_id": "kr_milk_001", "brand": "Kroger", "name": "Kroger Whole Milk", "size": "1 gallon", "price": 4.39, "in_stock": true},
+        {"product_id": "kr_milk_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Whole Milk", "size": "0.5 gallon", "price": 4.99, "in_stock": true},
+        {"product_id": "kr_milk_003", "brand": "Fairlife", "name": "Fairlife 2% Ultra-Filtered Milk", "size": "52 fl oz", "price": 5.29, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "eggs",
+      "category": "dairy",
+      "products": [
+        {"product_id": "kr_eggs_001", "brand": "Kroger", "name": "Kroger Large White Eggs", "size": "12 count", "price": 3.79, "in_stock": true},
+        {"product_id": "kr_eggs_002", "brand": "Simple Truth", "name": "Simple Truth Cage-Free Brown Eggs", "size": "12 count", "price": 4.99, "in_stock": true},
+        {"product_id": "kr_eggs_003", "brand": "Eggland's Best", "name": "Eggland's Best Large Eggs", "size": "18 count", "price": 6.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "chicken breast",
+      "category": "meat",
+      "products": [
+        {"product_id": "kr_chicken_001", "brand": "Kroger", "name": "Kroger Boneless Skinless Chicken Breast", "size": "1 lb", "price": 5.49, "in_stock": true},
+        {"product_id": "kr_chicken_002", "brand": "Simple Truth", "name": "Simple Truth Organic Chicken Breast", "size": "1 lb", "price": 8.99, "in_stock": true},
+        {"product_id": "kr_chicken_003", "brand": "Perdue", "name": "Perdue Fresh Chicken Breast Tenderloins", "size": "1 lb", "price": 6.99, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "ground beef",
+      "category": "meat",
+      "products": [
+        {"product_id": "kr_beef_001", "brand": "Kroger", "name": "Kroger Ground Beef 80/20", "size": "1 lb", "price": 5.99, "in_stock": true},
+        {"product_id": "kr_beef_002", "brand": "Simple Truth", "name": "Simple Truth Grass Fed Ground Beef", "size": "1 lb", "price": 8.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "pasta",
+      "category": "pantry",
+      "products": [
+        {"product_id": "kr_pasta_001", "brand": "Kroger", "name": "Kroger Spaghetti", "size": "16 oz", "price": 1.39, "in_stock": true},
+        {"product_id": "kr_pasta_002", "brand": "Barilla", "name": "Barilla Penne Pasta", "size": "16 oz", "price": 1.89, "in_stock": true},
+        {"product_id": "kr_pasta_003", "brand": "Ronzoni", "name": "Ronzoni Rotini Pasta", "size": "16 oz", "price": 1.69, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "rice",
+      "category": "pantry",
+      "products": [
+        {"product_id": "kr_rice_001", "brand": "Kroger", "name": "Kroger Long Grain White Rice", "size": "5 lb", "price": 4.99, "in_stock": true},
+        {"product_id": "kr_rice_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Brown Rice", "size": "2 lb", "price": 4.49, "in_stock": true},
+        {"product_id": "kr_rice_003", "brand": "Ben's Original", "name": "Ben's Original Ready Rice Jasmine", "size": "8.5 oz pouch", "price": 2.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "black beans",
+      "category": "pantry",
+      "products": [
+        {"product_id": "kr_beans_001", "brand": "Kroger", "name": "Kroger Black Beans", "size": "15 oz can", "price": 0.99, "in_stock": true},
+        {"product_id": "kr_beans_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Black Beans", "size": "15 oz can", "price": 1.49, "in_stock": true},
+        {"product_id": "kr_beans_003", "brand": "Bush's Best", "name": "Bush's Best Black Beans", "size": "15 oz can", "price": 1.59, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "tomatoes",
+      "category": "produce",
+      "products": [
+        {"product_id": "kr_tomato_001", "brand": "Fresh Produce", "name": "Roma Tomatoes", "size": "1 lb", "price": 1.79, "in_stock": true},
+        {"product_id": "kr_tomato_002", "brand": "Fresh Produce", "name": "Cherry Tomatoes", "size": "1 pint", "price": 2.99, "in_stock": true},
+        {"product_id": "kr_tomato_003", "brand": "NatureSweet", "name": "NatureSweet Cherubs Tomatoes", "size": "10 oz", "price": 3.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "onion",
+      "category": "produce",
+      "products": [
+        {"product_id": "kr_onion_001", "brand": "Fresh Produce", "name": "Yellow Onion", "size": "1 lb", "price": 1.19, "in_stock": true},
+        {"product_id": "kr_onion_002", "brand": "Fresh Produce", "name": "White Onion", "size": "1 lb", "price": 1.29, "in_stock": true},
+        {"product_id": "kr_onion_003", "brand": "Fresh Produce", "name": "Red Onion", "size": "1 lb", "price": 1.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "olive oil",
+      "category": "pantry",
+      "products": [
+        {"product_id": "kr_oil_001", "brand": "Kroger", "name": "Kroger Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 7.99, "in_stock": true},
+        {"product_id": "kr_oil_002", "brand": "Bertolli", "name": "Bertolli Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 8.49, "in_stock": true},
+        {"product_id": "kr_oil_003", "brand": "Filippo Berio", "name": "Filippo Berio Extra Virgin Olive Oil", "size": "25.3 fl oz", "price": 12.49, "in_stock": false}
+      ]
+    }
+  ]
+}

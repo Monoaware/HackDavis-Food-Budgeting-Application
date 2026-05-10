@@ -1,10 +1,12 @@
-_STORES = [
-    {"name": "Aldi", "tagline": "Unbeatable prices on everyday essentials"},
-    {"name": "Trader Joe's", "tagline": "Affordable specialty and organic foods"},
-    {"name": "Safeway", "tagline": "Wide selection with weekly deals"},
-    {"name": "Whole Foods", "tagline": "Premium organic and natural foods"},
-    {"name": "Costco", "tagline": "Bulk buying for maximum savings"},
-]
+from prices import lookup_price, STORE_NAMES
+
+_STORE_META = {
+    "Safeway":            "Wide selection with weekly deals",
+    "Trader Joe's":       "Affordable specialty and organic foods",
+    "Whole Foods Market": "Premium organic and natural foods",
+    "Kroger":             "Everyday low prices with store brand savings",
+    "Costco":             "Bulk buying for maximum savings",
+}
 
 
 def consolidate_ingredients(recipes):
@@ -33,16 +35,36 @@ def consolidate_ingredients(recipes):
     return sorted(merged.values(), key=lambda x: x["name"])
 
 
-def suggest_store(plan):
-    """Return the single best-fit store for a plan based on total cost."""
-    total_cost = plan.get("totalCost", 0)
-    if total_cost < 20:
-        return _STORES[0]   # Aldi
-    elif total_cost < 35:
-        return _STORES[1]   # Trader Joe's
-    elif total_cost < 55:
-        return _STORES[2]   # Safeway
-    elif total_cost < 80:
-        return _STORES[3]   # Whole Foods
-    else:
-        return _STORES[4]   # Costco
+def suggest_store(grocery_list):
+    """Return the cheapest store that stocks every ingredient in the grocery list.
+
+    A store is skipped entirely if any ingredient returns None (not in catalogue
+    or fully out of stock). Returns None if no store can fulfill the full list.
+    """
+    best_store = None
+    best_cost = float("inf")
+
+    for store_name in STORE_NAMES:
+        total = 0.0
+        skip = False
+        for item in grocery_list:
+            price = lookup_price(item["name"], store_name, item.get("amount", 0), item.get("unit", ""))
+            if price is None:
+                skip = True
+                break
+            total += price
+        if skip:
+            continue
+        total = round(total, 2)
+        if total < best_cost:
+            best_cost = total
+            best_store = store_name
+
+    if best_store is None:
+        return None
+
+    return {
+        "name": best_store,
+        "tagline": _STORE_META.get(best_store, ""),
+        "estimatedCost": best_cost,
+    }

@@ -22,11 +22,22 @@ def recommend():
         recipes = fetch_recipes(user)
         plans = generate_meal_plans(recipes, user)
 
+        fulfillable = []
         for plan in plans:
             plan["groceryList"] = consolidate_ingredients(plan["meals"])
-            plan["suggestedStore"] = suggest_store(plan)
+            store = suggest_store(plan["groceryList"])
+            if store is None:
+                continue
+            plan["suggestedStore"] = store
+            plan["estimatedCost"] = store["estimatedCost"]
+            fulfillable.append(plan)
 
-        plans = rank_meal_plans(plans, user)
+        if not fulfillable:
+            return jsonify({
+                "error": "No grocery store carries all ingredients for any of the suggested meal plans. Try adjusting your dietary filters, increasing your budget, or selecting fewer meals."
+            }), 422
+
+        plans = rank_meal_plans(fulfillable, user)
 
         return jsonify({"plans": plans})
 

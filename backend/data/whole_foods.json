@@ -1,0 +1,94 @@
+{
+  "request_id": "req_wholefoods_003",
+  "store_id": "whole_foods_7780",
+  "store_name": "Whole Foods Market",
+  "distance_miles": 2.4,
+  "currency": "USD",
+  "last_updated": "2026-05-09T10:17:00-07:00",
+  "catalogue": [
+    {
+      "ingredient": "milk",
+      "category": "dairy",
+      "products": [
+        {"product_id": "wfm_milk_001", "brand": "365 by Whole Foods Market", "name": "365 Organic Whole Milk", "size": "0.5 gallon", "price": 4.99, "in_stock": true},
+        {"product_id": "wfm_milk_002", "brand": "Organic Valley", "name": "Organic Valley Whole Milk", "size": "0.5 gallon", "price": 6.49, "in_stock": true},
+        {"product_id": "wfm_milk_003", "brand": "Califia Farms", "name": "Califia Farms Unsweetened Almond Milk", "size": "48 fl oz", "price": 5.29, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "eggs",
+      "category": "dairy",
+      "products": [
+        {"product_id": "wfm_eggs_001", "brand": "365 by Whole Foods Market", "name": "365 Cage-Free Large Brown Eggs", "size": "12 count", "price": 4.49, "in_stock": true},
+        {"product_id": "wfm_eggs_002", "brand": "Vital Farms", "name": "Vital Farms Pasture-Raised Eggs", "size": "12 count", "price": 7.99, "in_stock": true},
+        {"product_id": "wfm_eggs_003", "brand": "Pete & Gerry's", "name": "Pete & Gerry's Organic Eggs", "size": "12 count", "price": 6.99, "in_stock": false}
+      ]
+    },
+    {
+      "ingredient": "chicken breast",
+      "category": "meat",
+      "products": [
+        {"product_id": "wfm_chicken_001", "brand": "365 by Whole Foods Market", "name": "365 Boneless Skinless Chicken Breast", "size": "1 lb", "price": 7.49, "in_stock": true},
+        {"product_id": "wfm_chicken_002", "brand": "Mary's", "name": "Mary's Organic Chicken Breast", "size": "1 lb", "price": 10.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "ground beef",
+      "category": "meat",
+      "products": [
+        {"product_id": "wfm_beef_001", "brand": "365 by Whole Foods Market", "name": "365 Ground Beef 85/15", "size": "1 lb", "price": 7.99, "in_stock": true},
+        {"product_id": "wfm_beef_002", "brand": "Country Natural Beef", "name": "Country Natural Beef Grass Fed Ground Beef", "size": "1 lb", "price": 9.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "pasta",
+      "category": "pantry",
+      "products": [
+        {"product_id": "wfm_pasta_001", "brand": "365 by Whole Foods Market", "name": "365 Spaghetti", "size": "16 oz", "price": 1.99, "in_stock": true},
+        {"product_id": "wfm_pasta_002", "brand": "Banza", "name": "Banza Chickpea Penne", "size": "8 oz", "price": 3.99, "in_stock": true},
+        {"product_id": "wfm_pasta_003", "brand": "Jovial", "name": "Jovial Brown Rice Pasta", "size": "12 oz", "price": 4.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "rice",
+      "category": "pantry",
+      "products": [
+        {"product_id": "wfm_rice_001", "brand": "365 by Whole Foods Market", "name": "365 Organic Jasmine Rice", "size": "2 lb", "price": 4.99, "in_stock": true},
+        {"product_id": "wfm_rice_002", "brand": "Lundberg", "name": "Lundberg Organic Short Grain Brown Rice", "size": "2 lb", "price": 6.99, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "black beans",
+      "category": "pantry",
+      "products": [
+        {"product_id": "wfm_beans_001", "brand": "365 by Whole Foods Market", "name": "365 Organic Black Beans", "size": "15 oz can", "price": 1.79, "in_stock": true},
+        {"product_id": "wfm_beans_002", "brand": "Eden Foods", "name": "Eden Organic Black Beans", "size": "15 oz can", "price": 2.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "tomatoes",
+      "category": "produce",
+      "products": [
+        {"product_id": "wfm_tomato_001", "brand": "Organic Produce", "name": "Organic Roma Tomatoes", "size": "1 lb", "price": 3.49, "in_stock": true},
+        {"product_id": "wfm_tomato_002", "brand": "Organic Produce", "name": "Organic Grape Tomatoes", "size": "1 pint", "price": 4.49, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "onion",
+      "category": "produce",
+      "products": [
+        {"product_id": "wfm_onion_001", "brand": "Organic Produce", "name": "Organic Yellow Onion", "size": "1 lb", "price": 1.99, "in_stock": true},
+        {"product_id": "wfm_onion_002", "brand": "Organic Produce", "name": "Organic Red Onion", "size": "1 lb", "price": 2.29, "in_stock": true}
+      ]
+    },
+    {
+      "ingredient": "olive oil",
+      "category": "pantry",
+      "products": [
+        {"product_id": "wfm_oil_001", "brand": "365 by Whole Foods Market", "name": "365 Extra Virgin Olive Oil", "size": "33.8 fl oz", "price": 13.99, "in_stock": true},
+        {"product_id": "wfm_oil_002", "brand": "California Olive Ranch", "name": "California Olive Ranch Global Blend Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 12.99, "in_stock": true},
+        {"product_id": "wfm_oil_003", "brand": "Graza", "name": "Graza Sizzle Extra Virgin Olive Oil", "size": "25.3 fl oz", "price": 17.99, "in_stock": false}
+      ]
+    }
+  ]
+}
