@@ -34,9 +34,10 @@ const MOCK_PLANS: MealPlan[] = [
 
 interface Props {
   onSignOut: () => void
+  onCreatePlan: () => void
 }
 
-export default function DashboardPage({ onSignOut }: Props) {
+export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
   return (
     <div>
       <nav className="dash-nav">
@@ -57,7 +58,7 @@ export default function DashboardPage({ onSignOut }: Props) {
       <div className="dash-hero">
         <h1 className="dash-greeting">Good morning, Jane.</h1>
         <p className="dash-sub">Ready to plan your next week?</p>
-        <button className="btn-new-plan">
+        <button className="btn-new-plan" onClick={onCreatePlan}>
           <PlusIcon />
           Create new plan
         </button>
