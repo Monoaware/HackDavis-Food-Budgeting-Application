@@ -34,6 +34,11 @@ def create_meal_plan(current_user, data):
         meal_plan["Intolerances"] = data["Intolerances"]
     if "Diets" in data:
         meal_plan["Diets"] = data["Diets"]
+    if "maxPrepTime" in data and data.get("maxPrepTime") is not None:
+        try:
+            meal_plan["maxPrepTime"] = int(data.get("maxPrepTime"))
+        except (TypeError, ValueError):
+            meal_plan["maxPrepTime"] = data.get("maxPrepTime")
 
     # Selected plan results
     for field in ["meals", "totalCost", "totalProtein", "totalFiber",
