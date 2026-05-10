@@ -11,14 +11,16 @@ import DashboardPage from './pages/DashboardPage'
 import PreferencesPage, { type PlanPreferences } from './pages/PreferencesPage'
 import RankingPage from './pages/RankingPage'
 import ResultsPage, { type Plan } from './pages/ResultsPage'
+import MealPage from './pages/MealPage'
 
-type Page = 'dashboard' | 'preferences' | 'ranking' | 'results'
+type Page = 'dashboard' | 'preferences' | 'ranking' | 'results' | 'meal'
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'))
   const [page, setPage] = useState<Page>('dashboard')
   const [results, setResults] = useState<Plan[]>([])
   const [lastPrefs, setLastPrefs] = useState<PlanPreferences | null>(null)
+  const [selectedMealId, setSelectedMealId] = useState<string | null>(null)
 
   function handleSignOut() {
     localStorage.removeItem('token')
@@ -128,10 +130,23 @@ export default function App() {
     )
   }
 
+  if (page === 'meal' && selectedMealId) {
+    return (
+      <MealPage
+        planId={selectedMealId}
+        onBack={() => setPage('dashboard')}
+      />
+    )
+  }
+
   return (
     <DashboardPage
       onSignOut={handleSignOut}
       onCreatePlan={() => setPage('preferences')}
+      onViewPlan={(id) => {
+        setSelectedMealId(id)
+        setPage('meal')
+      }}
     />
   )
 }

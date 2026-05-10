@@ -4,7 +4,7 @@ from spoonacular import fetch_recipes
 from optimizer import generate_meal_plans
 from gemini_ranker import rank_meal_plans
 from auth import signup_user, login_user, token_required
-from meals import create_meal_plan, get_meal_plans
+from meals import create_meal_plan, get_meal_plans, get_meal_plan
 
 app = Flask(__name__)
 CORS(app)
@@ -38,6 +38,13 @@ def login():
 @token_required
 def fetch_meal_plans(current_user):
     body, status = get_meal_plans(current_user)
+    return jsonify(body), status
+
+
+@app.route("/meal-plans/<meal_plan_id>", methods=["GET"])
+@token_required
+def fetch_meal_plan(current_user, meal_plan_id):
+    body, status = get_meal_plan(current_user, meal_plan_id)
     return jsonify(body), status
 
 
@@ -90,4 +97,4 @@ def rank():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="127.0.0.1", port=5000, debug=True)
