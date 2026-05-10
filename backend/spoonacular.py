@@ -8,8 +8,20 @@ load_dotenv()
 SPOONACULAR_API_KEY = os.getenv("SPOONACULAR_API_KEY")
 BASE_URL = "https://api.spoonacular.com/recipes/complexSearch"
 _FALLBACK_PATH = os.path.join(os.path.dirname(__file__), "data", "fallback_recipes.json")
+_CACHE_PATH    = os.path.join(os.path.dirname(__file__), "data", "recipe_cache.json")
 
-_cache = {}
+def _load_cache():
+    try:
+        with open(_CACHE_PATH, "r") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+def _save_cache(cache):
+    with open(_CACHE_PATH, "w") as f:
+        json.dump(cache, f)
+
+_cache = _load_cache()
 
 
 def _cache_key(meal_plan):
@@ -77,7 +89,7 @@ def fetch_recipes(meal_plan):
 
     params = {
         "apiKey": SPOONACULAR_API_KEY,
-        "number": 30,
+        "number": 15,
         "addRecipeNutrition": True,
         "addRecipeInformation": True,
     }
@@ -91,6 +103,7 @@ def fetch_recipes(meal_plan):
 
     try:
         response = requests.get(BASE_URL, params=params, timeout=15)
+        print(f"[SPOONACULAR] Points this request: {response.headers.get('X-API-Quota-Request', '?')} | Points used today: {response.headers.get('X-API-Quota-Used', '?')}")
         response.raise_for_status()
         results = response.json().get("results", [])
         recipes = [_normalize_recipe(r) for r in results]
@@ -99,4 +112,5 @@ def fetch_recipes(meal_plan):
         recipes = _load_fallback()
 
     _cache[key] = recipes
+    _save_cache(_cache)
     return recipes
