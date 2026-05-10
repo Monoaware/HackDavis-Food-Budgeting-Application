@@ -5,8 +5,18 @@ import '../styles/auth.css'
 
 type Tab = 'login' | 'signup'
 
-export default function AuthPage() {
+interface Props {
+  onSuccess: (token: string) => void
+}
+
+export default function AuthPage({ onSuccess }: Props) {
   const [tab, setTab] = useState<Tab>('login')
+  const [justSignedUp, setJustSignedUp] = useState(false)
+
+  function handleSignedUp() {
+    setJustSignedUp(true)
+    setTab('login')
+  }
 
   return (
     <>
@@ -49,7 +59,10 @@ export default function AuthPage() {
             </button>
           </div>
 
-          {tab === 'login' ? <LoginForm key="login" /> : <SignupForm key="signup" />}
+          {tab === 'login'
+            ? <LoginForm key="login" onSuccess={onSuccess} successMessage={justSignedUp ? 'Account created! Sign in to continue.' : undefined} />
+            : <SignupForm key="signup" onSignedUp={handleSignedUp} />
+          }
         </div>
       </div>
     </>
