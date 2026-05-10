@@ -1,9 +1,11 @@
+from concurrent.futures import ThreadPoolExecutor
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from spoonacular import fetch_recipes
 from optimizer import generate_meal_plans
 from gemini_ranker import rank_meal_plans
-from grocery import consolidate_ingredients, suggest_store
+from grocery import consolidate_ingredients, suggest_store, enrich_grocery_list, rank_ingredients_with_gemini
+from prices import get_product_candidates
 from auth import signup_user, login_user, token_required
 from meals import create_meal_plan, get_meal_plans, get_meal_plan, delete_meal_plan
 
@@ -78,13 +80,48 @@ def recommend():
                 "error": "No meal plans could be generated. Try adjusting your filters or increasing your budget."
             }), 422
 
+        # Consolidate ingredients for each plan (fast, pure Python)
         for plan in plans:
-            grocery_list = consolidate_ingredients(plan["meals"])
-            store = suggest_store(grocery_list)
-            plan["groceryList"] = grocery_list
+            plan["groceryList"] = consolidate_ingredients(plan["meals"])
+
+        # Select best store for each plan in parallel (helps when Kroger cache is cold)
+        def _select_store(plan):
+            return suggest_store(plan["groceryList"])
+
+        with ThreadPoolExecutor(max_workers=len(plans)) as ex:
+            stores = list(ex.map(_select_store, plans))
+
+        for plan, store in zip(plans, stores):
             if store:
                 plan["suggestedStore"] = store
                 plan["totalCost"] = store["estimatedCost"]
+                plan["_store_name"] = store["name"]
+
+        # De-duplicate ingredients across all plans, then make ONE Gemini call
+        unique_ingredients = {}
+        for plan in plans:
+            store_name = plan.get("_store_name")
+            if not store_name:
+                continue
+            for item in plan["groceryList"]:
+                name = item["name"]
+                if name not in unique_ingredients:
+                    unique_ingredients[name] = {
+                        "ingredient": name,
+                        "amount":     item["amount"],
+                        "unit":       item["unit"],
+                        "candidates": get_product_candidates(
+                            name, store_name, item["amount"], item["unit"]
+                        ),
+                    }
+
+        chosen = rank_ingredients_with_gemini(list(unique_ingredients.values()))
+
+        # Enrich every plan's grocery list with the chosen products
+        for plan in plans:
+            plan.pop("_store_name", None)
+            if plan.get("suggestedStore"):
+                enrich_grocery_list(plan["groceryList"], chosen)
 
         return jsonify({"plans": plans})
 

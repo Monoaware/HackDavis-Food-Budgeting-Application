@@ -1,6 +1,6 @@
 import os
 import json
-from prices import lookup_price, get_product_candidates, STORE_NAMES
+from prices import lookup_price, STORE_NAMES, _parse_size, _packages_needed
 
 _STORE_META = {
     "Safeway":            "Wide selection with weekly deals",
@@ -37,8 +37,68 @@ def consolidate_ingredients(recipes):
     return sorted(merged.values(), key=lambda x: x["name"])
 
 
-def _rank_products_with_gemini(ingredient_candidates):
-    """Batch-call Gemini to pick the most relevant product for each ingredient.
+def suggest_store(grocery_list):
+    """Find the store with the best ingredient coverage, breaking ties by lowest cost.
+
+    Does NOT require every ingredient to be in the catalogue — partial matches are fine.
+    Items not found at the chosen store will simply have no product mapping.
+    Returns None only if no store stocks any ingredient at all.
+    """
+    best_store = None
+    best_cost = float("inf")
+    best_coverage = -1
+
+    for store_name in STORE_NAMES:
+        total = 0.0
+        covered = 0
+        for item in grocery_list:
+            price = lookup_price(item["name"], store_name, item.get("amount", 0), item.get("unit", ""))
+            if price is not None:
+                total += price
+                covered += 1
+
+        if covered == 0:
+            continue
+
+        total = round(total, 2)
+        if covered > best_coverage or (covered == best_coverage and total < best_cost):
+            best_coverage = covered
+            best_cost = total
+            best_store = store_name
+
+    if best_store is None:
+        return None
+
+    return {
+        "name":          best_store,
+        "tagline":       _STORE_META.get(best_store, ""),
+        "estimatedCost": best_cost,
+    }
+
+
+def enrich_grocery_list(grocery_list, chosen_products):
+    """Apply pre-ranked product choices to a grocery list.
+
+    Recalculates totalCost based on each item's actual required amount so that
+    different plans buying different quantities of the same ingredient stay accurate.
+    chosen_products: {ingredient_name: {productId, brand, name, size, unitPrice, ...} | None}
+    """
+    for item in grocery_list:
+        template = chosen_products.get(item["name"])
+        if not template:
+            item["product"] = None
+            continue
+        pkg_amount, pkg_unit = _parse_size(template["size"])
+        n = (
+            _packages_needed(item["amount"], item["unit"], pkg_amount, pkg_unit)
+            if (pkg_amount and item["amount"] > 0)
+            else 1
+        )
+        item["product"] = {**template, "totalCost": round(n * template["unitPrice"], 2)}
+
+
+def rank_ingredients_with_gemini(ingredient_candidates):
+    """Single Gemini call to pick the most relevant product for each unique ingredient.
 
     ingredient_candidates: list of {ingredient, amount, unit, candidates: [...]}
     Returns: {ingredient_name: chosen_product_dict or None}
@@ -100,55 +160,3 @@ def _rank_products_with_gemini(ingredient_candidates):
             result[item["ingredient"]] = None
 
     return result
-
-
-def suggest_store(grocery_list):
-    """Return the cheapest store that stocks every ingredient, with Gemini-ranked products.
-
-    A store is skipped if any ingredient returns None (not in catalogue or out of stock).
-    Returns None if no store can fulfill the full list.
-    """
-    best_store = None
-    best_cost = float("inf")
-
-    for store_name in STORE_NAMES:
-        total = 0.0
-        skip = False
-        for item in grocery_list:
-            price = lookup_price(item["name"], store_name, item.get("amount", 0), item.get("unit", ""))
-            if price is None:
-                skip = True
-                break
-            total += price
-        if skip:
-            continue
-        total = round(total, 2)
-        if total < best_cost:
-            best_cost = total
-            best_store = store_name
-
-    if best_store is None:
-        return None
-
-    # Collect all product candidates at the winning store, then let Gemini rank them.
-    ingredient_candidates = []
-    for item in grocery_list:
-        candidates = get_product_candidates(
-            item["name"], best_store, item.get("amount", 0), item.get("unit", "")
-        )
-        ingredient_candidates.append({
-            "ingredient": item["name"],
-            "amount":     item.get("amount", 0),
-            "unit":       item.get("unit", ""),
-            "candidates": candidates,
-        })
-
-    chosen = _rank_products_with_gemini(ingredient_candidates)
-    for item in grocery_list:
-        item["product"] = chosen.get(item["name"])
-
-    return {
-        "name":          best_store,
-        "tagline":       _STORE_META.get(best_store, ""),
-        "estimatedCost": best_cost,
-    }
