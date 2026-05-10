@@ -94,7 +94,8 @@ def fetch_recipes(meal_plan):
         response.raise_for_status()
         results = response.json().get("results", [])
         recipes = [_normalize_recipe(r) for r in results]
-    except Exception:
+    except Exception as e:
+        print(f"[SPOONACULAR] Falling back to local data: {e}")
         recipes = _load_fallback()
 
     _cache[key] = recipes

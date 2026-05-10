@@ -28,8 +28,8 @@ export default function App() {
           budget:       prefs.budget ? parseFloat(prefs.budget) : undefined,
           allergens:    prefs.intolerances,
           dietaryTags:  prefs.diets,
-          proteinGoal:  parseFloat(prefs.proteinGoal) || 0,
-          fiberGoal:    parseFloat(prefs.fiberGoal) || 0,
+          proteinGoal:  prefs.proteinGoal ? parseFloat(prefs.proteinGoal) : undefined,
+          fiberGoal:    prefs.fiberGoal   ? parseFloat(prefs.fiberGoal)   : undefined,
         },
       }),
     })

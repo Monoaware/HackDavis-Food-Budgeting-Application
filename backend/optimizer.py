@@ -8,14 +8,14 @@ _MAX_CANDIDATES = 15
 #  Hard-constraint filter: allergens, dietary tags, prep time.
 # =================================================================
 def is_recipe_allowed(recipe, meal_plan):
-    user_allergies = meal_plan.get("allergens", [])
-    recipe_allergens = recipe.get("allergens", [])
+    user_allergies = [a.lower() for a in meal_plan.get("allergens", [])]
+    recipe_allergens = [a.lower() for a in recipe.get("allergens", [])]
     avoids_allergens = all(
         allergy not in recipe_allergens for allergy in user_allergies
     )
 
-    dietary_tags = meal_plan.get("dietaryTags", [])
-    recipe_diets = recipe.get("dietTags", [])
+    dietary_tags = [t.lower() for t in meal_plan.get("dietaryTags", [])]
+    recipe_diets = [d.lower() for d in recipe.get("dietTags", [])]
     matches_diet = not dietary_tags or any(
         matches_user_diet(tag, recipe_diets) for tag in dietary_tags
     )
