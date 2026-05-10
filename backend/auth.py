@@ -2,6 +2,9 @@
 import os
 import datetime
 import jwt
+from functools import wraps
+from pathlib import Path
+from flask import request, jsonify
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
@@ -96,3 +99,29 @@ def login_user(email, password):
         "message": "Login successful",
         "token": token
     }, 200
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth_header = request.headers.get("Authorization")
+
+        if not auth_header or not auth_header.startswith("Bearer "):
+            return jsonify({"error": "Token missing"}), 401
+
+        token = auth_header.split(" ")[1]
+
+        try:
+            data = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
+            current_user = users_collection.find_one({"email": data["email"]})
+
+            if not current_user:
+                return jsonify({"error": "User not found"}), 401
+
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token expired"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Invalid token"}), 401
+
+        return f(current_user, *args, **kwargs)
+
+    return decorated
