@@ -29,6 +29,16 @@ _UNIT_ALIASES = {
     "gallons": "gallon", "liters": "liter", "lbs": "lb", "pounds": "lb",
     "pound": "lb", "ounces": "oz", "ounce": "oz", "pints": "pint",
     "quarts": "quart", "counts": "count", "pieces": "piece",
+    # volume shorthand from Spoonacular
+    "cups": "cup", "c": "cup",
+    "tbsp": "tablespoon", "tbs": "tablespoon", "t": "tablespoon",
+    "teaspoons": "teaspoon",
+    "tablespoons": "tablespoon",
+    "grams": "g",
+    "milliliter": "ml", "milliliters": "ml",
+    # count-type shorthand
+    "cloves": "clove", "clove": "clove",
+    "servings": "serving",
 }
 
 def _normalize_unit(u):
@@ -74,6 +84,8 @@ _VOLUME_TO_FLOZ = {
 _COUNT_UNITS = {
     "", "count", "piece", "pcs", "large", "medium", "small",
     "whole", "unit", "item", "clove", "slice", "egg",
+    "serving", "bunch", "head", "stalk", "sprig", "pinch", "dash",
+    "bag", "can", "jar", "bottle", "package", "box",
 }
 
 

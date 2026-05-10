@@ -10,88 +10,984 @@
       "ingredient": "milk",
       "category": "dairy",
       "products": [
-        {"product_id": "sfw_milk_001", "brand": "Lucerne", "name": "Lucerne Whole Milk", "size": "1 gallon", "price": 4.79, "in_stock": true},
-        {"product_id": "sfw_milk_002", "brand": "Horizon Organic", "name": "Horizon Organic Whole Milk", "size": "0.5 gallon", "price": 5.99, "in_stock": true},
-        {"product_id": "sfw_milk_003", "brand": "Fairlife", "name": "Fairlife 2% Ultra-Filtered Milk", "size": "52 fl oz", "price": 5.49, "in_stock": false}
+        {
+          "product_id": "sfw_milk_001",
+          "brand": "Lucerne",
+          "name": "Lucerne Whole Milk",
+          "size": "1 gallon",
+          "price": 4.79,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_milk_002",
+          "brand": "Horizon Organic",
+          "name": "Horizon Organic Whole Milk",
+          "size": "0.5 gallon",
+          "price": 5.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_milk_003",
+          "brand": "Fairlife",
+          "name": "Fairlife 2% Ultra-Filtered Milk",
+          "size": "52 fl oz",
+          "price": 5.49,
+          "in_stock": false
+        }
       ]
     },
     {
       "ingredient": "eggs",
       "category": "dairy",
       "products": [
-        {"product_id": "sfw_eggs_001", "brand": "Lucerne", "name": "Lucerne Large Grade AA Eggs", "size": "12 count", "price": 3.99, "in_stock": true},
-        {"product_id": "sfw_eggs_002", "brand": "Eggland's Best", "name": "Eggland's Best Cage-Free Large Eggs", "size": "12 count", "price": 5.49, "in_stock": true},
-        {"product_id": "sfw_eggs_003", "brand": "Open Nature", "name": "Open Nature Pasture Raised Eggs", "size": "12 count", "price": 6.99, "in_stock": true}
+        {
+          "product_id": "sfw_eggs_001",
+          "brand": "Lucerne",
+          "name": "Lucerne Large Grade AA Eggs",
+          "size": "12 count",
+          "price": 3.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_eggs_002",
+          "brand": "Eggland's Best",
+          "name": "Eggland's Best Cage-Free Large Eggs",
+          "size": "12 count",
+          "price": 5.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_eggs_003",
+          "brand": "Open Nature",
+          "name": "Open Nature Pasture Raised Eggs",
+          "size": "12 count",
+          "price": 6.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "chicken breast",
       "category": "meat",
       "products": [
-        {"product_id": "sfw_chicken_001", "brand": "Foster Farms", "name": "Foster Farms Boneless Skinless Chicken Breast", "size": "1 lb", "price": 5.99, "in_stock": true},
-        {"product_id": "sfw_chicken_002", "brand": "Open Nature", "name": "Open Nature Air Chilled Chicken Breast", "size": "1 lb", "price": 7.49, "in_stock": true},
-        {"product_id": "sfw_chicken_003", "brand": "Signature Farms", "name": "Signature Farms Thin Sliced Chicken Breast", "size": "1 lb", "price": 6.79, "in_stock": false}
+        {
+          "product_id": "sfw_chicken_001",
+          "brand": "Foster Farms",
+          "name": "Foster Farms Boneless Skinless Chicken Breast",
+          "size": "1 lb",
+          "price": 5.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_chicken_002",
+          "brand": "Open Nature",
+          "name": "Open Nature Air Chilled Chicken Breast",
+          "size": "1 lb",
+          "price": 7.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_chicken_003",
+          "brand": "Signature Farms",
+          "name": "Signature Farms Thin Sliced Chicken Breast",
+          "size": "1 lb",
+          "price": 6.79,
+          "in_stock": false
+        }
       ]
     },
     {
       "ingredient": "ground beef",
       "category": "meat",
       "products": [
-        {"product_id": "sfw_beef_001", "brand": "Signature Farms", "name": "Signature Farms Ground Beef 80/20", "size": "1 lb", "price": 6.49, "in_stock": true},
-        {"product_id": "sfw_beef_002", "brand": "Open Nature", "name": "Open Nature Grass Fed Ground Beef 85/15", "size": "1 lb", "price": 8.99, "in_stock": true}
+        {
+          "product_id": "sfw_beef_001",
+          "brand": "Signature Farms",
+          "name": "Signature Farms Ground Beef 80/20",
+          "size": "1 lb",
+          "price": 6.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_beef_002",
+          "brand": "Open Nature",
+          "name": "Open Nature Grass Fed Ground Beef 85/15",
+          "size": "1 lb",
+          "price": 8.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "pasta",
       "category": "pantry",
       "products": [
-        {"product_id": "sfw_pasta_001", "brand": "Barilla", "name": "Barilla Spaghetti", "size": "16 oz", "price": 1.99, "in_stock": true},
-        {"product_id": "sfw_pasta_002", "brand": "Signature Select", "name": "Signature Select Penne Pasta", "size": "16 oz", "price": 1.49, "in_stock": true},
-        {"product_id": "sfw_pasta_003", "brand": "Banza", "name": "Banza Chickpea Pasta", "size": "8 oz", "price": 3.99, "in_stock": true}
+        {
+          "product_id": "sfw_pasta_001",
+          "brand": "Barilla",
+          "name": "Barilla Spaghetti",
+          "size": "16 oz",
+          "price": 1.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_pasta_002",
+          "brand": "Signature Select",
+          "name": "Signature Select Penne Pasta",
+          "size": "16 oz",
+          "price": 1.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_pasta_003",
+          "brand": "Banza",
+          "name": "Banza Chickpea Pasta",
+          "size": "8 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "rice",
       "category": "pantry",
       "products": [
-        {"product_id": "sfw_rice_001", "brand": "Mahatma", "name": "Mahatma Long Grain White Rice", "size": "2 lb", "price": 3.49, "in_stock": true},
-        {"product_id": "sfw_rice_002", "brand": "Lundberg", "name": "Lundberg Organic Brown Rice", "size": "2 lb", "price": 6.49, "in_stock": true},
-        {"product_id": "sfw_rice_003", "brand": "Signature Select", "name": "Signature Select Jasmine Rice", "size": "5 lb", "price": 6.99, "in_stock": true}
+        {
+          "product_id": "sfw_rice_001",
+          "brand": "Mahatma",
+          "name": "Mahatma Long Grain White Rice",
+          "size": "2 lb",
+          "price": 3.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_rice_002",
+          "brand": "Lundberg",
+          "name": "Lundberg Organic Brown Rice",
+          "size": "2 lb",
+          "price": 6.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_rice_003",
+          "brand": "Signature Select",
+          "name": "Signature Select Jasmine Rice",
+          "size": "5 lb",
+          "price": 6.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "black beans",
       "category": "pantry",
       "products": [
-        {"product_id": "sfw_beans_001", "brand": "S&W", "name": "S&W Black Beans", "size": "15 oz can", "price": 1.49, "in_stock": true},
-        {"product_id": "sfw_beans_002", "brand": "Signature Select", "name": "Signature Select Black Beans", "size": "15 oz can", "price": 1.19, "in_stock": true},
-        {"product_id": "sfw_beans_003", "brand": "Bush's Best", "name": "Bush's Best Reduced Sodium Black Beans", "size": "15 oz can", "price": 1.69, "in_stock": false}
+        {
+          "product_id": "sfw_beans_001",
+          "brand": "S&W",
+          "name": "S&W Black Beans",
+          "size": "15 oz can",
+          "price": 1.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_beans_002",
+          "brand": "Signature Select",
+          "name": "Signature Select Black Beans",
+          "size": "15 oz can",
+          "price": 1.19,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_beans_003",
+          "brand": "Bush's Best",
+          "name": "Bush's Best Reduced Sodium Black Beans",
+          "size": "15 oz can",
+          "price": 1.69,
+          "in_stock": false
+        }
       ]
     },
     {
       "ingredient": "tomatoes",
       "category": "produce",
       "products": [
-        {"product_id": "sfw_tomato_001", "brand": "Fresh Produce", "name": "Roma Tomatoes", "size": "1 lb", "price": 1.99, "in_stock": true},
-        {"product_id": "sfw_tomato_002", "brand": "Fresh Produce", "name": "Grape Tomatoes", "size": "1 pint", "price": 3.49, "in_stock": true},
-        {"product_id": "sfw_tomato_003", "brand": "NatureSweet", "name": "NatureSweet Cherubs Tomatoes", "size": "10 oz", "price": 4.29, "in_stock": true}
+        {
+          "product_id": "sfw_tomato_001",
+          "brand": "Fresh Produce",
+          "name": "Roma Tomatoes",
+          "size": "1 lb",
+          "price": 1.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_tomato_002",
+          "brand": "Fresh Produce",
+          "name": "Grape Tomatoes",
+          "size": "1 pint",
+          "price": 3.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_tomato_003",
+          "brand": "NatureSweet",
+          "name": "NatureSweet Cherubs Tomatoes",
+          "size": "10 oz",
+          "price": 4.29,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "onion",
       "category": "produce",
       "products": [
-        {"product_id": "sfw_onion_001", "brand": "Fresh Produce", "name": "Yellow Onion", "size": "1 lb", "price": 1.29, "in_stock": true},
-        {"product_id": "sfw_onion_002", "brand": "Fresh Produce", "name": "Red Onion", "size": "1 lb", "price": 1.59, "in_stock": true}
+        {
+          "product_id": "sfw_onion_001",
+          "brand": "Fresh Produce",
+          "name": "Yellow Onion",
+          "size": "1 lb",
+          "price": 1.29,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_onion_002",
+          "brand": "Fresh Produce",
+          "name": "Red Onion",
+          "size": "1 lb",
+          "price": 1.59,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "olive oil",
       "category": "pantry",
       "products": [
-        {"product_id": "sfw_oil_001", "brand": "Bertolli", "name": "Bertolli Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 8.99, "in_stock": true},
-        {"product_id": "sfw_oil_002", "brand": "California Olive Ranch", "name": "California Olive Ranch Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 12.99, "in_stock": true},
-        {"product_id": "sfw_oil_003", "brand": "Signature Select", "name": "Signature Select Olive Oil", "size": "25.5 fl oz", "price": 10.49, "in_stock": true}
+        {
+          "product_id": "sfw_oil_001",
+          "brand": "Bertolli",
+          "name": "Bertolli Extra Virgin Olive Oil",
+          "size": "16.9 fl oz",
+          "price": 8.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_oil_002",
+          "brand": "California Olive Ranch",
+          "name": "California Olive Ranch Extra Virgin Olive Oil",
+          "size": "16.9 fl oz",
+          "price": 12.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "sfw_oil_003",
+          "brand": "Signature Select",
+          "name": "Signature Select Olive Oil",
+          "size": "25.5 fl oz",
+          "price": 10.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "garlic",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_garlic_001",
+          "brand": "Fresh Produce",
+          "name": "Garlic Bulb",
+          "size": "3 count",
+          "price": 1.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_garlic_002",
+          "brand": "Christopher Ranch",
+          "name": "Organic Garlic",
+          "size": "6 count",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "bell pepper",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_bell_p_001",
+          "brand": "Fresh Produce",
+          "name": "Green Bell Pepper",
+          "size": "1 count",
+          "price": 0.89,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_bell_p_002",
+          "brand": "Fresh Produce",
+          "name": "Red Bell Pepper",
+          "size": "1 count",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "carrots",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_carrot_001",
+          "brand": "Bolthouse Farms",
+          "name": "Baby Carrots",
+          "size": "16 oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_carrot_002",
+          "brand": "Fresh Produce",
+          "name": "Whole Carrots",
+          "size": "2 lb",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "avocado",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_avocad_001",
+          "brand": "Fresh Produce",
+          "name": "Hass Avocado",
+          "size": "1 count",
+          "price": 1.29,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_avocad_002",
+          "brand": "Fresh Produce",
+          "name": "Organic Avocado",
+          "size": "1 count",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "broccoli",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_brocco_001",
+          "brand": "Fresh Produce",
+          "name": "Broccoli Crown",
+          "size": "1 lb",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "celery",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_celery_001",
+          "brand": "Fresh Produce",
+          "name": "Celery Stalks",
+          "size": "1 bunch",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butternut squash",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_butter_001",
+          "brand": "Fresh Produce",
+          "name": "Butternut Squash",
+          "size": "1 count",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "asparagus",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_aspara_001",
+          "brand": "Fresh Produce",
+          "name": "Asparagus",
+          "size": "1 lb",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "spinach",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_spinac_001",
+          "brand": "Earthbound Farm",
+          "name": "Organic Baby Spinach",
+          "size": "5 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "mushrooms",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_mushro_001",
+          "brand": "Giorgio",
+          "name": "White Mushrooms",
+          "size": "8 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sweet potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_sweet__001",
+          "brand": "Fresh Produce",
+          "name": "Sweet Potatoes",
+          "size": "3 lb",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "zucchini",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_zucchi_001",
+          "brand": "Fresh Produce",
+          "name": "Zucchini",
+          "size": "1 lb",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kale",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_kale_001",
+          "brand": "Fresh Produce",
+          "name": "Curly Kale",
+          "size": "1 bunch",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lemon",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_lemon_001",
+          "brand": "Fresh Produce",
+          "name": "Lemons",
+          "size": "2 lb bag",
+          "price": 3.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_lemon_002",
+          "brand": "Fresh Produce",
+          "name": "Lemon",
+          "size": "1 count",
+          "price": 0.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lime",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_lime_001",
+          "brand": "Fresh Produce",
+          "name": "Limes",
+          "size": "1 lb",
+          "price": 1.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_lime_002",
+          "brand": "Fresh Produce",
+          "name": "Lime",
+          "size": "1 count",
+          "price": 0.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cilantro",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_cilant_001",
+          "brand": "Fresh Produce",
+          "name": "Fresh Cilantro",
+          "size": "1 bunch",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ginger",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "saf_ginger_001",
+          "brand": "Fresh Produce",
+          "name": "Fresh Ginger Root",
+          "size": "8 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tomatoes",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_canned_001",
+          "brand": "Muir Glen",
+          "name": "Organic Diced Tomatoes",
+          "size": "14.5 oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_canned_002",
+          "brand": "Signature Select",
+          "name": "Diced Tomatoes",
+          "size": "14.5 oz",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peas",
+      "category": "frozen",
+      "products": [
+        {
+          "product_id": "saf_peas_001",
+          "brand": "Birds Eye",
+          "name": "Frozen Peas",
+          "size": "12 oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_peas_002",
+          "brand": "Signature Select",
+          "name": "Sweet Peas",
+          "size": "16 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lentils",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_lentil_001",
+          "brand": "Bob's Red Mill",
+          "name": "Green Lentils",
+          "size": "16 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kidney beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_kidney_001",
+          "brand": "Bush's Best",
+          "name": "Red Kidney Beans",
+          "size": "15 oz",
+          "price": 1.59,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_kidney_002",
+          "brand": "Signature Select",
+          "name": "Dark Kidney Beans",
+          "size": "15 oz",
+          "price": 1.19,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "garbanzo beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_garban_001",
+          "brand": "S&W",
+          "name": "Garbanzo Beans",
+          "size": "15 oz",
+          "price": 1.59,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_garban_002",
+          "brand": "Signature Select",
+          "name": "Chickpeas",
+          "size": "15 oz",
+          "price": 1.19,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "quinoa",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_quinoa_001",
+          "brand": "Ancient Harvest",
+          "name": "Organic Quinoa",
+          "size": "12 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "vegetable broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_vegeta_001",
+          "brand": "Swanson",
+          "name": "Vegetable Broth",
+          "size": "32 fl oz",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_vegeta_002",
+          "brand": "Signature Select",
+          "name": "Vegetable Broth",
+          "size": "32 fl oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "balsamic vinegar",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_balsam_001",
+          "brand": "Bertolli",
+          "name": "Balsamic Vinegar",
+          "size": "16.9 fl oz",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "honey",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_honey_001",
+          "brand": "Nature Nate's",
+          "name": "Raw Honey",
+          "size": "16 oz",
+          "price": 8.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_honey_002",
+          "brand": "Signature Select",
+          "name": "Pure Honey",
+          "size": "12 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "soy sauce",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_soy_sa_001",
+          "brand": "Kikkoman",
+          "name": "Soy Sauce",
+          "size": "10 fl oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "coconut milk",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_coconu_001",
+          "brand": "Thai Kitchen",
+          "name": "Organic Coconut Milk",
+          "size": "13.5 fl oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "salt",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_salt_001",
+          "brand": "Morton",
+          "name": "Iodized Salt",
+          "size": "26 oz",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "black pepper",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_black__001",
+          "brand": "McCormick",
+          "name": "Ground Black Pepper",
+          "size": "3 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cumin",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_cumin_001",
+          "brand": "McCormick",
+          "name": "Ground Cumin",
+          "size": "2.5 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cinnamon",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_cinnam_001",
+          "brand": "McCormick",
+          "name": "Ground Cinnamon",
+          "size": "2.37 oz",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chili powder",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_chili__001",
+          "brand": "McCormick",
+          "name": "Chili Powder",
+          "size": "3 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "turmeric",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_turmer_001",
+          "brand": "McCormick",
+          "name": "Ground Turmeric",
+          "size": "1.75 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "goat cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_goat_c_001",
+          "brand": "Montchevre",
+          "name": "Original Goat Cheese Log",
+          "size": "4 oz",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "feta cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_feta_c_001",
+          "brand": "Athenos",
+          "name": "Crumbled Feta Cheese",
+          "size": "6 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "greek yogurt",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_greek__001",
+          "brand": "Chobani",
+          "name": "Plain Greek Yogurt",
+          "size": "32 oz",
+          "price": 6.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "liquid egg",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "saf_liquid_001",
+          "brand": "JUST Egg",
+          "name": "Plant-Based Egg",
+          "size": "12 fl oz",
+          "price": 5.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_liquid_002",
+          "brand": "Lucerne",
+          "name": "Liquid Egg Whites",
+          "size": "16 fl oz",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "pork",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "saf_pork_001",
+          "brand": "Signature Farms",
+          "name": "Boneless Pork Loin",
+          "size": "1 lb",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "saf_pork_002",
+          "brand": "Smithfield",
+          "name": "Pork Shoulder",
+          "size": "1 lb",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ground turkey",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "saf_ground_001",
+          "brand": "Jennie-O",
+          "name": "Ground Turkey 93/7",
+          "size": "1 lb",
+          "price": 5.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sesame oil",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_sesame_001",
+          "brand": "Kadoya",
+          "name": "Pure Sesame Oil",
+          "size": "5.5 fl oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "walnuts",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "saf_walnut_001",
+          "brand": "Diamond",
+          "name": "Walnut Halves",
+          "size": "8 oz",
+          "price": 7.99,
+          "in_stock": true
+        }
       ]
     }
   ]

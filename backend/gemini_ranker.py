@@ -1,12 +1,12 @@
 import os
 import json
-import google.generativeai as genai
+from google import genai
 from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-_model = genai.GenerativeModel("gemini-2.0-flash")
+_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+_MODEL = "gemini-2.5-flash"
 
 
 def _build_prompt(plans, meal_plan):
@@ -68,19 +68,17 @@ def rank_meal_plans(plans, meal_plan):
         return plans
 
     prompt = _build_prompt(plans, meal_plan)
-    response = _model.generate_content(prompt)
 
     try:
+        response = _client.models.generate_content(model=_MODEL, contents=prompt)
         text = response.text.strip()
-        # Strip markdown code fences if present
         if text.startswith("```"):
             text = text.split("```")[1]
             if text.startswith("json"):
                 text = text[4:]
         data = json.loads(text)
         ranking = data.get("ranking", [])
-    except (json.JSONDecodeError, AttributeError):
-        # If Gemini response can't be parsed, return plans as-is with default ranks
+    except Exception:
         for i, plan in enumerate(plans):
             plan["geminiRank"] = i + 1
             plan["geminiExplanation"] = ""
@@ -95,7 +93,6 @@ def rank_meal_plans(plans, meal_plan):
             plan["geminiExplanation"] = entry.get("explanation", "")
             ranked_plans.append(plan)
 
-    # Append any plans that Gemini didn't include (safety net)
     included = {entry.get("planIndex") for entry in ranking}
     for i, plan in enumerate(plans):
         if i not in included:

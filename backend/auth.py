@@ -8,6 +8,7 @@ from flask import request, jsonify
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
+import certifi
 
 load_dotenv()
 
@@ -17,10 +18,15 @@ JWT_SECRET = os.getenv("JWT_SECRET")
 print(f"[DEBUG] MONGO_URI: {MONGO_URI}")
 print(f"[DEBUG] JWT_SECRET exists: {JWT_SECRET is not None}")
 
-client = MongoClient(MONGO_URI)
+client = MongoClient(
+    MONGO_URI,
+    tlsCAFile=certifi.where()
+)
+
 db = client["meal_app"]
 users_collection = db["users"]
 
+client.admin.command("ping")
 print(f"[DEBUG] MongoDB connection established")
 print(f"[DEBUG] Database: {db.name}, Collection: {users_collection.name}")
 

@@ -10,89 +10,888 @@
       "ingredient": "milk",
       "category": "dairy",
       "products": [
-        {"product_id": "kr_milk_001", "brand": "Kroger", "name": "Kroger Whole Milk", "size": "1 gallon", "price": 4.39, "in_stock": true},
-        {"product_id": "kr_milk_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Whole Milk", "size": "0.5 gallon", "price": 4.99, "in_stock": true},
-        {"product_id": "kr_milk_003", "brand": "Fairlife", "name": "Fairlife 2% Ultra-Filtered Milk", "size": "52 fl oz", "price": 5.29, "in_stock": true}
+        {
+          "product_id": "kr_milk_001",
+          "brand": "Kroger",
+          "name": "Kroger Whole Milk",
+          "size": "1 gallon",
+          "price": 4.39,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_milk_002",
+          "brand": "Simple Truth Organic",
+          "name": "Simple Truth Organic Whole Milk",
+          "size": "0.5 gallon",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_milk_003",
+          "brand": "Fairlife",
+          "name": "Fairlife 2% Ultra-Filtered Milk",
+          "size": "52 fl oz",
+          "price": 5.29,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "eggs",
       "category": "dairy",
       "products": [
-        {"product_id": "kr_eggs_001", "brand": "Kroger", "name": "Kroger Large White Eggs", "size": "12 count", "price": 3.79, "in_stock": true},
-        {"product_id": "kr_eggs_002", "brand": "Simple Truth", "name": "Simple Truth Cage-Free Brown Eggs", "size": "12 count", "price": 4.99, "in_stock": true},
-        {"product_id": "kr_eggs_003", "brand": "Eggland's Best", "name": "Eggland's Best Large Eggs", "size": "18 count", "price": 6.49, "in_stock": true}
+        {
+          "product_id": "kr_eggs_001",
+          "brand": "Kroger",
+          "name": "Kroger Large White Eggs",
+          "size": "12 count",
+          "price": 3.79,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_eggs_002",
+          "brand": "Simple Truth",
+          "name": "Simple Truth Cage-Free Brown Eggs",
+          "size": "12 count",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_eggs_003",
+          "brand": "Eggland's Best",
+          "name": "Eggland's Best Large Eggs",
+          "size": "18 count",
+          "price": 6.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "chicken breast",
       "category": "meat",
       "products": [
-        {"product_id": "kr_chicken_001", "brand": "Kroger", "name": "Kroger Boneless Skinless Chicken Breast", "size": "1 lb", "price": 5.49, "in_stock": true},
-        {"product_id": "kr_chicken_002", "brand": "Simple Truth", "name": "Simple Truth Organic Chicken Breast", "size": "1 lb", "price": 8.99, "in_stock": true},
-        {"product_id": "kr_chicken_003", "brand": "Perdue", "name": "Perdue Fresh Chicken Breast Tenderloins", "size": "1 lb", "price": 6.99, "in_stock": false}
+        {
+          "product_id": "kr_chicken_001",
+          "brand": "Kroger",
+          "name": "Kroger Boneless Skinless Chicken Breast",
+          "size": "1 lb",
+          "price": 5.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_chicken_002",
+          "brand": "Simple Truth",
+          "name": "Simple Truth Organic Chicken Breast",
+          "size": "1 lb",
+          "price": 8.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_chicken_003",
+          "brand": "Perdue",
+          "name": "Perdue Fresh Chicken Breast Tenderloins",
+          "size": "1 lb",
+          "price": 6.99,
+          "in_stock": false
+        }
       ]
     },
     {
       "ingredient": "ground beef",
       "category": "meat",
       "products": [
-        {"product_id": "kr_beef_001", "brand": "Kroger", "name": "Kroger Ground Beef 80/20", "size": "1 lb", "price": 5.99, "in_stock": true},
-        {"product_id": "kr_beef_002", "brand": "Simple Truth", "name": "Simple Truth Grass Fed Ground Beef", "size": "1 lb", "price": 8.49, "in_stock": true}
+        {
+          "product_id": "kr_beef_001",
+          "brand": "Kroger",
+          "name": "Kroger Ground Beef 80/20",
+          "size": "1 lb",
+          "price": 5.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_beef_002",
+          "brand": "Simple Truth",
+          "name": "Simple Truth Grass Fed Ground Beef",
+          "size": "1 lb",
+          "price": 8.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "pasta",
       "category": "pantry",
       "products": [
-        {"product_id": "kr_pasta_001", "brand": "Kroger", "name": "Kroger Spaghetti", "size": "16 oz", "price": 1.39, "in_stock": true},
-        {"product_id": "kr_pasta_002", "brand": "Barilla", "name": "Barilla Penne Pasta", "size": "16 oz", "price": 1.89, "in_stock": true},
-        {"product_id": "kr_pasta_003", "brand": "Ronzoni", "name": "Ronzoni Rotini Pasta", "size": "16 oz", "price": 1.69, "in_stock": true}
+        {
+          "product_id": "kr_pasta_001",
+          "brand": "Kroger",
+          "name": "Kroger Spaghetti",
+          "size": "16 oz",
+          "price": 1.39,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_pasta_002",
+          "brand": "Barilla",
+          "name": "Barilla Penne Pasta",
+          "size": "16 oz",
+          "price": 1.89,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_pasta_003",
+          "brand": "Ronzoni",
+          "name": "Ronzoni Rotini Pasta",
+          "size": "16 oz",
+          "price": 1.69,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "rice",
       "category": "pantry",
       "products": [
-        {"product_id": "kr_rice_001", "brand": "Kroger", "name": "Kroger Long Grain White Rice", "size": "5 lb", "price": 4.99, "in_stock": true},
-        {"product_id": "kr_rice_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Brown Rice", "size": "2 lb", "price": 4.49, "in_stock": true},
-        {"product_id": "kr_rice_003", "brand": "Ben's Original", "name": "Ben's Original Ready Rice Jasmine", "size": "8.5 oz pouch", "price": 2.49, "in_stock": true}
+        {
+          "product_id": "kr_rice_001",
+          "brand": "Kroger",
+          "name": "Kroger Long Grain White Rice",
+          "size": "5 lb",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_rice_002",
+          "brand": "Simple Truth Organic",
+          "name": "Simple Truth Organic Brown Rice",
+          "size": "2 lb",
+          "price": 4.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_rice_003",
+          "brand": "Ben's Original",
+          "name": "Ben's Original Ready Rice Jasmine",
+          "size": "8.5 oz pouch",
+          "price": 2.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "black beans",
       "category": "pantry",
       "products": [
-        {"product_id": "kr_beans_001", "brand": "Kroger", "name": "Kroger Black Beans", "size": "15 oz can", "price": 0.99, "in_stock": true},
-        {"product_id": "kr_beans_002", "brand": "Simple Truth Organic", "name": "Simple Truth Organic Black Beans", "size": "15 oz can", "price": 1.49, "in_stock": true},
-        {"product_id": "kr_beans_003", "brand": "Bush's Best", "name": "Bush's Best Black Beans", "size": "15 oz can", "price": 1.59, "in_stock": true}
+        {
+          "product_id": "kr_beans_001",
+          "brand": "Kroger",
+          "name": "Kroger Black Beans",
+          "size": "15 oz can",
+          "price": 0.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_beans_002",
+          "brand": "Simple Truth Organic",
+          "name": "Simple Truth Organic Black Beans",
+          "size": "15 oz can",
+          "price": 1.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_beans_003",
+          "brand": "Bush's Best",
+          "name": "Bush's Best Black Beans",
+          "size": "15 oz can",
+          "price": 1.59,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "tomatoes",
       "category": "produce",
       "products": [
-        {"product_id": "kr_tomato_001", "brand": "Fresh Produce", "name": "Roma Tomatoes", "size": "1 lb", "price": 1.79, "in_stock": true},
-        {"product_id": "kr_tomato_002", "brand": "Fresh Produce", "name": "Cherry Tomatoes", "size": "1 pint", "price": 2.99, "in_stock": true},
-        {"product_id": "kr_tomato_003", "brand": "NatureSweet", "name": "NatureSweet Cherubs Tomatoes", "size": "10 oz", "price": 3.99, "in_stock": true}
+        {
+          "product_id": "kr_tomato_001",
+          "brand": "Fresh Produce",
+          "name": "Roma Tomatoes",
+          "size": "1 lb",
+          "price": 1.79,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_tomato_002",
+          "brand": "Fresh Produce",
+          "name": "Cherry Tomatoes",
+          "size": "1 pint",
+          "price": 2.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_tomato_003",
+          "brand": "NatureSweet",
+          "name": "NatureSweet Cherubs Tomatoes",
+          "size": "10 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "onion",
       "category": "produce",
       "products": [
-        {"product_id": "kr_onion_001", "brand": "Fresh Produce", "name": "Yellow Onion", "size": "1 lb", "price": 1.19, "in_stock": true},
-        {"product_id": "kr_onion_002", "brand": "Fresh Produce", "name": "White Onion", "size": "1 lb", "price": 1.29, "in_stock": true},
-        {"product_id": "kr_onion_003", "brand": "Fresh Produce", "name": "Red Onion", "size": "1 lb", "price": 1.49, "in_stock": true}
+        {
+          "product_id": "kr_onion_001",
+          "brand": "Fresh Produce",
+          "name": "Yellow Onion",
+          "size": "1 lb",
+          "price": 1.19,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_onion_002",
+          "brand": "Fresh Produce",
+          "name": "White Onion",
+          "size": "1 lb",
+          "price": 1.29,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_onion_003",
+          "brand": "Fresh Produce",
+          "name": "Red Onion",
+          "size": "1 lb",
+          "price": 1.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "olive oil",
       "category": "pantry",
       "products": [
-        {"product_id": "kr_oil_001", "brand": "Kroger", "name": "Kroger Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 7.99, "in_stock": true},
-        {"product_id": "kr_oil_002", "brand": "Bertolli", "name": "Bertolli Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 8.49, "in_stock": true},
-        {"product_id": "kr_oil_003", "brand": "Filippo Berio", "name": "Filippo Berio Extra Virgin Olive Oil", "size": "25.3 fl oz", "price": 12.49, "in_stock": false}
+        {
+          "product_id": "kr_oil_001",
+          "brand": "Kroger",
+          "name": "Kroger Extra Virgin Olive Oil",
+          "size": "16.9 fl oz",
+          "price": 7.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_oil_002",
+          "brand": "Bertolli",
+          "name": "Bertolli Extra Virgin Olive Oil",
+          "size": "16.9 fl oz",
+          "price": 8.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "kr_oil_003",
+          "brand": "Filippo Berio",
+          "name": "Filippo Berio Extra Virgin Olive Oil",
+          "size": "25.3 fl oz",
+          "price": 12.49,
+          "in_stock": false
+        }
+      ]
+    },
+    {
+      "ingredient": "garlic",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_garlic_001",
+          "brand": "Kroger",
+          "name": "Garlic Bulb",
+          "size": "3 count",
+          "price": 0.89,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "bell pepper",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_bell_p_001",
+          "brand": "Kroger",
+          "name": "Green Bell Pepper",
+          "size": "1 count",
+          "price": 0.79,
+          "in_stock": true
+        },
+        {
+          "product_id": "kro_bell_p_002",
+          "brand": "Kroger",
+          "name": "Red Bell Pepper",
+          "size": "1 count",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "carrots",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_carrot_001",
+          "brand": "Kroger",
+          "name": "Baby Carrots",
+          "size": "16 oz",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "avocado",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_avocad_001",
+          "brand": "Kroger",
+          "name": "Hass Avocado",
+          "size": "1 count",
+          "price": 0.89,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "broccoli",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_brocco_001",
+          "brand": "Kroger",
+          "name": "Broccoli Crown",
+          "size": "1 lb",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "celery",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_celery_001",
+          "brand": "Kroger",
+          "name": "Celery Stalks",
+          "size": "1 bunch",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butternut squash",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_butter_001",
+          "brand": "Kroger",
+          "name": "Butternut Squash",
+          "size": "1 count",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "asparagus",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_aspara_001",
+          "brand": "Kroger",
+          "name": "Asparagus",
+          "size": "1 lb",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "spinach",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_spinac_001",
+          "brand": "Kroger",
+          "name": "Baby Spinach",
+          "size": "5 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "mushrooms",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_mushro_001",
+          "brand": "Kroger",
+          "name": "White Mushrooms",
+          "size": "8 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sweet potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_sweet__001",
+          "brand": "Kroger",
+          "name": "Sweet Potatoes",
+          "size": "3 lb",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "zucchini",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_zucchi_001",
+          "brand": "Kroger",
+          "name": "Zucchini",
+          "size": "1 lb",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kale",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_kale_001",
+          "brand": "Kroger",
+          "name": "Kale",
+          "size": "1 bunch",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lemon",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_lemon_001",
+          "brand": "Kroger",
+          "name": "Lemons",
+          "size": "1 count",
+          "price": 0.59,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lime",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_lime_001",
+          "brand": "Kroger",
+          "name": "Lime",
+          "size": "1 count",
+          "price": 0.33,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cilantro",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_cilant_001",
+          "brand": "Kroger",
+          "name": "Fresh Cilantro",
+          "size": "1 bunch",
+          "price": 0.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ginger",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "kro_ginger_001",
+          "brand": "Kroger",
+          "name": "Fresh Ginger",
+          "size": "8 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tomatoes",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_canned_001",
+          "brand": "Kroger",
+          "name": "Diced Tomatoes",
+          "size": "14.5 oz",
+          "price": 0.89,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peas",
+      "category": "frozen",
+      "products": [
+        {
+          "product_id": "kro_peas_001",
+          "brand": "Kroger",
+          "name": "Frozen Green Peas",
+          "size": "16 oz",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lentils",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_lentil_001",
+          "brand": "Kroger",
+          "name": "Green Lentils",
+          "size": "16 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kidney beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_kidney_001",
+          "brand": "Kroger",
+          "name": "Dark Red Kidney Beans",
+          "size": "15 oz",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "garbanzo beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_garban_001",
+          "brand": "Kroger",
+          "name": "Chickpeas",
+          "size": "15 oz",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "quinoa",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_quinoa_001",
+          "brand": "Simple Truth",
+          "name": "Organic Quinoa",
+          "size": "12 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "vegetable broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_vegeta_001",
+          "brand": "Kroger",
+          "name": "Vegetable Broth",
+          "size": "32 fl oz",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "balsamic vinegar",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_balsam_001",
+          "brand": "Kroger",
+          "name": "Balsamic Vinegar",
+          "size": "16.9 fl oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "honey",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_honey_001",
+          "brand": "Kroger",
+          "name": "Pure Clover Honey",
+          "size": "12 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "soy sauce",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_soy_sa_001",
+          "brand": "Kroger",
+          "name": "Soy Sauce",
+          "size": "10 fl oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "coconut milk",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_coconu_001",
+          "brand": "Kroger",
+          "name": "Coconut Milk",
+          "size": "13.5 fl oz",
+          "price": 1.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "salt",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_salt_001",
+          "brand": "Kroger",
+          "name": "Iodized Salt",
+          "size": "26 oz",
+          "price": 0.89,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "black pepper",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_black__001",
+          "brand": "Kroger",
+          "name": "Ground Black Pepper",
+          "size": "3 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cumin",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_cumin_001",
+          "brand": "Kroger",
+          "name": "Ground Cumin",
+          "size": "2.5 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cinnamon",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_cinnam_001",
+          "brand": "Kroger",
+          "name": "Ground Cinnamon",
+          "size": "2.37 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chili powder",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_chili__001",
+          "brand": "Kroger",
+          "name": "Chili Powder",
+          "size": "3 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "turmeric",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_turmer_001",
+          "brand": "Simple Truth",
+          "name": "Ground Turmeric",
+          "size": "2 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "goat cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "kro_goat_c_001",
+          "brand": "Simple Truth",
+          "name": "Goat Cheese",
+          "size": "4 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "feta cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "kro_feta_c_001",
+          "brand": "Kroger",
+          "name": "Feta Cheese Crumbles",
+          "size": "6 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "greek yogurt",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "kro_greek__001",
+          "brand": "Kroger",
+          "name": "Plain Greek Yogurt",
+          "size": "32 oz",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "liquid egg",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "kro_liquid_001",
+          "brand": "All Whites",
+          "name": "100% Liquid Egg Whites",
+          "size": "16 fl oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "pork",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "kro_pork_001",
+          "brand": "Kroger",
+          "name": "Pork Shoulder",
+          "size": "1 lb",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ground turkey",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "kro_ground_001",
+          "brand": "Kroger",
+          "name": "Ground Turkey 85/15",
+          "size": "1 lb",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sesame oil",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_sesame_001",
+          "brand": "Simple Truth",
+          "name": "Sesame Oil",
+          "size": "8 fl oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "walnuts",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "kro_walnut_001",
+          "brand": "Kroger",
+          "name": "Walnut Halves",
+          "size": "8 oz",
+          "price": 5.49,
+          "in_stock": true
+        }
       ]
     }
   ]

@@ -33,14 +33,16 @@ def _normalize_recipe(raw):
     # Spoonacular returns total nutrition for the whole recipe; divide by servings
     # to get per-serving values used for nutritional scoring.
     servings = max(raw.get("servings", 1), 1)
-    # Ingredient amounts are totals for the whole recipe (kept as-is for grocery shopping).
+    # complexSearch returns ingredients under nutrition.ingredients (not extendedIngredients).
+    # Amounts here are per-serving already; multiply back by servings for grocery totals.
+    nutrition_ingredients = nutrition.get("ingredients", [])
     ingredients = [
         {
             "name": ing.get("name", ""),
-            "amount": ing.get("amount", 0),
+            "amount": round(ing.get("amount", 0) * servings, 2),
             "unit": ing.get("unit", ""),
         }
-        for ing in raw.get("extendedIngredients", [])
+        for ing in nutrition_ingredients
     ]
     return {
         "id": raw.get("id"),
