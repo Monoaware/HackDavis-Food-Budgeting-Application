@@ -1,10 +1,18 @@
 import { useState } from 'react'
+
+const DIET_SLUG: Record<string, string> = {
+  'gluten free': 'glutenfree',
+  'low fodmap': 'lowfodmap',
+  'lacto-vegetarian': 'lacto-vegetarian',
+  'ovo-vegetarian': 'ovo-vegetarian',
+}
 import AuthPage from './pages/AuthPage'
 import DashboardPage from './pages/DashboardPage'
 import PreferencesPage, { type PlanPreferences } from './pages/PreferencesPage'
+import RankingPage from './pages/RankingPage'
 import ResultsPage, { type Plan } from './pages/ResultsPage'
 
-type Page = 'dashboard' | 'preferences' | 'results'
+type Page = 'dashboard' | 'preferences' | 'ranking' | 'results'
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'))
@@ -26,8 +34,8 @@ export default function App() {
         mealPlan: {
           numMeals:     prefs.numMeals,
           budget:       prefs.budget ? parseFloat(prefs.budget) : undefined,
-          allergens:    prefs.intolerances,
-          dietaryTags:  prefs.diets,
+          allergens:    (() => { const v = prefs.intolerances.map(i => i.toLowerCase()); console.log('[DEBUG] allergens:', v); return v; })(),
+          dietaryTags:  (() => { const v = prefs.diets.map(d => { const lower = d.toLowerCase(); return DIET_SLUG[lower] ?? lower }); console.log('[DEBUG] dietaryTags:', v); return v; })(),
           proteinGoal:  prefs.proteinGoal ? parseFloat(prefs.proteinGoal) : undefined,
           fiberGoal:    prefs.fiberGoal   ? parseFloat(prefs.fiberGoal)   : undefined,
           maxPrepTime:  prefs.maxPrepTime ? parseFloat(prefs.maxPrepTime) : undefined,
@@ -39,6 +47,18 @@ export default function App() {
     if (!res.ok) throw new Error(data.error || 'Failed to generate plans.')
 
     setLastPrefs(prefs)
+    setResults(data.plans)
+    setPage('ranking')
+  }
+
+  async function handleRank(query: string) {
+    const res = await fetch('/api/rank', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plans: results, rankingQuery: query }),
+    })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error || 'Failed to rank plans.')
     setResults(data.plans)
     setPage('results')
   }
@@ -84,6 +104,16 @@ export default function App() {
       <PreferencesPage
         onBack={() => setPage('dashboard')}
         onSubmit={handlePlanSubmit}
+      />
+    )
+  }
+
+  if (page === 'ranking') {
+    return (
+      <RankingPage
+        plans={results}
+        onBack={() => setPage('preferences')}
+        onRank={handleRank}
       />
     )
   }
