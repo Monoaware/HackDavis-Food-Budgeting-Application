@@ -142,6 +142,20 @@ body {
 
 .btn-submit:active { transform: scale(0.99); }
 
+/* ── FORM FEEDBACK ──────────────────────────────────── */
+
+.form-error {
+  font-size: 0.82rem;
+  color: var(--rust);
+  margin-bottom: 0.75rem;
+}
+
+.form-success {
+  font-size: 0.82rem;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+}
+
 /* ── SHARED KEYFRAMES ───────────────────────────────── */
 
 @keyframes fadeUp {

@@ -4,6 +4,7 @@ from spoonacular import fetch_recipes
 from optimizer import generate_meal_plans
 from grocery import consolidate_ingredients, suggest_store
 from gemini_ranker import rank_meal_plans
+from auth import signup_user, login_user
 
 app = Flask(__name__)
 CORS(app)
@@ -12,6 +13,25 @@ CORS(app)
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
+
+
+@app.route("/signup", methods=["POST"])
+def signup():
+    data = request.get_json()
+    body, status = signup_user(
+        data.get("first_name"),
+        data.get("last_name"),
+        data.get("email"),
+        data.get("password"),
+    )
+    return jsonify(body), status
+
+
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    body, status = login_user(data.get("email"), data.get("password"))
+    return jsonify(body), status
 
 
 @app.route("/recommend", methods=["POST"])
