@@ -2,6 +2,7 @@
 import os
 import datetime
 import jwt
+from backend.db import db
 from functools import wraps
 from pathlib import Path
 from flask import request, jsonify
@@ -17,8 +18,6 @@ JWT_SECRET = os.getenv("JWT_SECRET")
 print(f"[DEBUG] MONGO_URI: {MONGO_URI}")
 print(f"[DEBUG] JWT_SECRET exists: {JWT_SECRET is not None}")
 
-client = MongoClient(MONGO_URI)
-db = client["meal_app"]
 users_collection = db["users"]
 
 print(f"[DEBUG] MongoDB connection established")
