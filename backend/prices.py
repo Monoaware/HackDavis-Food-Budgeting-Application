@@ -144,6 +144,75 @@ def lookup_price(ingredient_name, store_name, amount=0, unit=""):
     return None
 
 
+def lookup_product(ingredient_name, store_name, amount=0, unit=""):
+    """Return {brand, name, size, unitPrice, totalCost} for the cheapest matching product.
+
+    Kroger uses the live API; other stores use the static catalogue.
+    Returns None if not found.
+    """
+    if store_name == "Kroger":
+        import kroger_api
+        return kroger_api.lookup_product(ingredient_name, amount, unit)
+
+    name = ingredient_name.lower()
+    for entry in _store_catalogues.get(store_name, []):
+        cat_key = entry["ingredient"].lower()
+        if cat_key in name or name in cat_key:
+            best_cost = None
+            best_product = None
+            for product in entry["products"]:
+                if not product.get("in_stock"):
+                    continue
+                pkg_amount, pkg_unit = _parse_size(product["size"])
+                n = _packages_needed(amount, unit, pkg_amount, pkg_unit) if (pkg_amount and amount > 0) else 1
+                cost = round(n * product["price"], 2)
+                if best_cost is None or cost < best_cost:
+                    best_cost = cost
+                    best_product = product
+            if best_product is None:
+                return None
+            return {
+                "brand":     best_product.get("brand", ""),
+                "name":      best_product.get("name", ""),
+                "size":      best_product.get("size", ""),
+                "unitPrice": best_product.get("price", 0),
+                "totalCost": best_cost,
+            }
+    return None
+
+
+def get_product_candidates(ingredient_name, store_name, amount=0, unit=""):
+    """Return ALL in-stock products matching ingredient_name at store_name with costs.
+
+    Each entry: {productId, brand, name, size, unitPrice, totalCost}
+    Kroger routes to kroger_api. Returns empty list if none found.
+    """
+    if store_name == "Kroger":
+        import kroger_api
+        return kroger_api.get_product_candidates(ingredient_name, amount, unit)
+
+    name = ingredient_name.lower()
+    results = []
+    for entry in _store_catalogues.get(store_name, []):
+        cat_key = entry["ingredient"].lower()
+        if cat_key in name or name in cat_key:
+            for product in entry["products"]:
+                if not product.get("in_stock"):
+                    continue
+                pkg_amount, pkg_unit = _parse_size(product["size"])
+                n = _packages_needed(amount, unit, pkg_amount, pkg_unit) if (pkg_amount and amount > 0) else 1
+                cost = round(n * product["price"], 2)
+                results.append({
+                    "productId": product.get("productId", ""),
+                    "brand":     product.get("brand", ""),
+                    "name":      product.get("name", ""),
+                    "size":      product.get("size", ""),
+                    "unitPrice": product.get("price", 0),
+                    "totalCost": cost,
+                })
+    return results
+
+
 def cheapest_cost_per_serving(recipe):
     """Minimum purchase cost across all stores — used as a budget pre-filter.
 

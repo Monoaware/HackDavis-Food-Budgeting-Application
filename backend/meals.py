@@ -44,7 +44,7 @@ def create_meal_plan(current_user, data):
     # Selected plan results
     for field in ["meals", "totalCost", "totalProtein", "totalFiber",
                   "totalCalories", "totalPrepTime", "suggestedStore",
-                  "geminiRank", "geminiExplanation"]:
+                  "groceryList", "geminiRank", "geminiExplanation"]:
         if field in data:
             meal_plan[field] = data[field]
 

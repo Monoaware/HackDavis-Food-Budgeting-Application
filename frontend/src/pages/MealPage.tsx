@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react'
 import '../styles/dashboard.css'
 
+interface Ingredient {
+  name: string
+  amount: number
+  perServingAmount?: number
+  unit: string
+  product?: {
+    productId: string
+    brand: string
+    name: string
+    size: string
+    unitPrice: number
+    totalCost: number
+  }
+}
+
 interface Meal {
   title: string
   image?: string
@@ -9,7 +24,7 @@ interface Meal {
   protein?: number
   fiber?: number
   calories?: number
-  ingredients?: string[]
+  ingredients?: Ingredient[]
   sourceUrl?: string
 }
 
@@ -27,7 +42,8 @@ interface MealPlan {
   totalFiber?: number
   totalCalories?: number
   totalPrepTime?: number
-  suggestedStore?: { name: string; estimatedCost: number }
+  suggestedStore?: { name: string; estimatedCost: number; tagline?: string }
+  groceryList?: Ingredient[]
   geminiRank?: number
   geminiExplanation?: string
 }
@@ -41,6 +57,7 @@ export default function MealPage({ planId, onBack }: Props) {
   const [plan, setPlan] = useState<MealPlan | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [expandedMeal, setExpandedMeal] = useState<number | null>(null)
 
   useEffect(() => {
     async function fetchPlan() {
@@ -69,6 +86,12 @@ export default function MealPage({ planId, onBack }: Props) {
   })
 
   const tags = [...(plan.Diets ?? []), ...(plan.Intolerances ?? [])]
+
+  function findGroceryItem(name: string) {
+    return plan!.groceryList?.find(
+      g => g.name.toLowerCase() === name.toLowerCase()
+    ) ?? null
+  }
 
   return (
     <div>
@@ -162,62 +185,93 @@ export default function MealPage({ planId, onBack }: Props) {
 
         {/* Meals */}
         <div>
-          <h3 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>Meals</h3>
+          <h3 style={{ marginBottom: '0.25rem', fontSize: '1rem', fontWeight: 600 }}>Meals</h3>
+          <p style={{ margin: '0 0 1rem 0', fontSize: '0.82rem', color: 'var(--muted)' }}>
+            Click a meal to see ingredients
+            {plan.suggestedStore ? ` · Shopping at ${plan.suggestedStore.name}` : ''}
+          </p>
           {plan.meals && plan.meals.length > 0 ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {plan.meals.map((meal, i) => (
                 <div
                   key={i}
-                  onClick={() => meal.sourceUrl && window.open(meal.sourceUrl, '_blank')}
-                  style={{
-                    border: '1px solid var(--border)',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    transition: 'transform 0.2s, box-shadow 0.2s',
-                    cursor: meal.sourceUrl ? 'pointer' : 'default',
-                  }}
-                  onMouseEnter={e => { if (meal.sourceUrl) (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
+                  onClick={() => setExpandedMeal(expandedMeal === i ? null : i)}
+                  style={{ border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer' }}
                 >
-                  {meal.image && (
-                    <img
-                      src={meal.image}
-                      alt={meal.title}
-                      style={{
-                        width: '100%',
-                        height: '140px',
-                        objectFit: 'cover',
-                      }}
-                    />
-                  )}
-                  <div style={{ padding: '1rem' }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', fontWeight: 600 }}>{meal.title}</h4>
-                    {meal.prepTime != null && (
-                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
-                        ⏱ {meal.prepTime} min
-                      </p>
+                  {/* Card header */}
+                  <div style={{ display: 'flex', gap: '1rem' }}>
+                    {meal.image && (
+                      <img
+                        src={meal.image}
+                        alt={meal.title}
+                        style={{ width: '110px', height: '110px', objectFit: 'cover', flexShrink: 0 }}
+                      />
                     )}
-                    {meal.calories != null && (
-                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
-                        🔥 {Math.round(meal.calories)} cal
-                      </p>
-                    )}
-                    {meal.protein != null && (
-                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
-                        💪 {meal.protein.toFixed(1)}g protein
-                      </p>
-                    )}
-                    {meal.fiber != null && (
-                      <p style={{ margin: '0.25rem 0', fontSize: '0.8rem', color: 'var(--muted)' }}>
-                        🌿 {meal.fiber.toFixed(1)}g fiber
-                      </p>
-                    )}
-                    {meal.servings != null && meal.servings > 1 && (
-                      <p style={{ margin: '0.5rem 0 0', fontSize: '0.75rem', color: 'var(--rust)', fontStyle: 'italic' }}>
-                        Makes {meal.servings} servings — you can make just a portion
-                      </p>
-                    )}
+                    <div style={{ padding: '1rem', flex: 1 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <h4 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 600 }}>{meal.title}</h4>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                          {meal.sourceUrl && (
+                            <a
+                              href={meal.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={e => e.stopPropagation()}
+                              style={{ fontSize: '0.8rem', color: 'var(--rust)', textDecoration: 'none', whiteSpace: 'nowrap' }}
+                            >
+                              View recipe ↗
+                            </a>
+                          )}
+                          <span style={{ fontSize: '0.75rem', color: 'var(--muted)', userSelect: 'none' }}>
+                            {expandedMeal === i ? '▲' : '▼'}
+                          </span>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+                        {meal.prepTime != null && <span style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>⏱ {meal.prepTime} min</span>}
+                        {meal.calories  != null && <span style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>🔥 {Math.round(meal.calories)} cal</span>}
+                        {meal.protein   != null && <span style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>💪 {meal.protein.toFixed(1)}g protein</span>}
+                        {meal.fiber     != null && <span style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>🌿 {meal.fiber.toFixed(1)}g fiber</span>}
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Expanded ingredient + product details */}
+                  {expandedMeal === i && meal.ingredients && meal.ingredients.length > 0 && (
+                    <div style={{ padding: '0.75rem 1rem', borderTop: '1px solid var(--border)', backgroundColor: 'rgba(250,248,243,0.5)' }}>
+                      {plan.suggestedStore && (
+                        <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.82rem', fontWeight: 500, color: 'var(--muted)' }}>
+                          🛒 {plan.suggestedStore.name} · est. ${plan.suggestedStore.estimatedCost.toFixed(2)} total
+                        </p>
+                      )}
+                      <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.8rem', fontWeight: 600, color: 'var(--muted)' }}>
+                        Ingredients (per serving{meal.servings && meal.servings > 1 ? ` of ${meal.servings}` : ''})
+                      </p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        {meal.ingredients.map((ing, j) => {
+                          const displayAmt = ing.perServingAmount ?? (meal.servings && meal.servings > 1 ? +(ing.amount / meal.servings).toFixed(2) : ing.amount)
+                          const groceryItem = findGroceryItem(ing.name)
+                          return (
+                            <div key={j} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                              <span style={{ fontSize: '0.82rem', color: 'var(--text)', flexShrink: 0 }}>
+                                {displayAmt} {ing.unit} <strong>{ing.name}</strong>
+                              </span>
+                              {groceryItem?.product ? (
+                                <div style={{ textAlign: 'right' }}>
+                                  <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--muted)' }}>
+                                    {groceryItem.product.brand ? `${groceryItem.product.brand} · ` : ''}{groceryItem.product.name}
+                                  </p>
+                                  <p style={{ margin: '0.1rem 0 0', fontSize: '0.78rem', color: 'var(--muted)' }}>
+                                    {groceryItem.product.size} · <strong style={{ color: 'var(--text)' }}>${groceryItem.product.totalCost.toFixed(2)}</strong>
+                                  </p>
+                                </div>
+                              ) : null}
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -225,6 +279,62 @@ export default function MealPage({ planId, onBack }: Props) {
             <p style={{ color: 'var(--muted)' }}>No meals in this plan.</p>
           )}
         </div>
+
+        {/* Grocery list */}
+        {plan.groceryList && plan.groceryList.length > 0 && (
+          <div style={{ marginTop: '2rem' }}>
+            <h3 style={{ marginBottom: '0.25rem', fontSize: '1rem', fontWeight: 600 }}>Grocery list</h3>
+            {plan.suggestedStore && (
+              <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: 'var(--muted)' }}>
+                Buy at {plan.suggestedStore.name} · estimated ${plan.suggestedStore.estimatedCost.toFixed(2)}
+              </p>
+            )}
+            <div style={{ border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
+              {plan.groceryList.map((item, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    padding: '0.65rem 1rem', gap: '1rem',
+                    borderBottom: i < plan.groceryList!.length - 1 ? '1px solid var(--border)' : 'none',
+                    backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(250,248,243,0.3)',
+                  }}
+                >
+                  <div>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 500 }}>
+                      {item.amount} {item.unit} {item.name}
+                    </span>
+                    {item.product && (
+                      <p style={{ margin: '0.2rem 0 0', fontSize: '0.78rem', color: 'var(--muted)' }}>
+                        {item.product.brand ? `${item.product.brand} · ` : ''}{item.product.name} ({item.product.size})
+                      </p>
+                    )}
+                  </div>
+                  {item.product ? (
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                      ${item.product.totalCost.toFixed(2)}
+                    </span>
+                  ) : (
+                    <span style={{ fontSize: '0.78rem', color: 'var(--muted)', whiteSpace: 'nowrap' }}>—</span>
+                  )}
+                </div>
+              ))}
+              {/* Total row */}
+              {plan.suggestedStore && (
+                <div style={{
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '0.65rem 1rem', borderTop: '2px solid var(--border)',
+                  backgroundColor: 'rgba(250,248,243,0.5)',
+                }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Total</span>
+                  <span style={{ fontSize: '0.9rem', fontWeight: 700 }}>
+                    ${plan.suggestedStore.estimatedCost.toFixed(2)}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* AI Explanation */}
         {plan.geminiExplanation && (

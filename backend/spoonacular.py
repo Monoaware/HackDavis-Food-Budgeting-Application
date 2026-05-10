@@ -60,7 +60,8 @@ def _normalize_recipe(raw):
     ingredients = [
         {
             "name": ing.get("name", ""),
-            "amount": round(ing.get("amount", 0) * servings, 2),
+            "amount": round(ing.get("amount", 0) * servings, 2),  # total for grocery lookup
+            "perServingAmount": round(ing.get("amount", 0), 2),   # single-serving display
             "unit": ing.get("unit", ""),
         }
         for ing in nutrition_ingredients

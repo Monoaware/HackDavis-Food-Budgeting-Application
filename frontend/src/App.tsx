@@ -79,8 +79,9 @@ export default function App() {
       totalFiber:       plan.totalFiber,
       totalCalories:    plan.totalCalories,
       totalPrepTime:    plan.totalPrepTime,
-      suggestedStore:   plan.suggestedStore,
-      geminiRank:       plan.geminiRank,
+      suggestedStore:    plan.suggestedStore,
+      groceryList:       plan.groceryList,
+      geminiRank:        plan.geminiRank,
       geminiExplanation: plan.geminiExplanation,
     }
     if (prefs.budget)              body.budget       = parseFloat(prefs.budget)

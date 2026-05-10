@@ -1,6 +1,21 @@
 import { useState } from 'react'
 import '../styles/results.css'
 
+export interface Ingredient {
+  name: string
+  amount: number
+  perServingAmount?: number
+  unit: string
+  product?: {
+    productId: string
+    brand: string
+    name: string
+    size: string
+    unitPrice: number
+    totalCost: number
+  }
+}
+
 export interface Meal {
   id: number
   title: string
@@ -8,7 +23,10 @@ export interface Meal {
   protein: number
   fiber: number
   calories: number
+  servings?: number
   image?: string
+  sourceUrl?: string
+  ingredients?: Ingredient[]
 }
 
 export interface Plan {
@@ -19,7 +37,8 @@ export interface Plan {
   totalCalories: number
   totalPrepTime: number
   estimatedCost: number
-  suggestedStore?: { name: string; estimatedCost: number; description?: string }
+  suggestedStore?: { name: string; estimatedCost: number; tagline?: string }
+  groceryList?: Ingredient[]
   geminiRank: number
   geminiExplanation: string
 }

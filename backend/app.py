@@ -3,6 +3,7 @@ from flask_cors import CORS
 from spoonacular import fetch_recipes
 from optimizer import generate_meal_plans
 from gemini_ranker import rank_meal_plans
+from grocery import consolidate_ingredients, suggest_store
 from auth import signup_user, login_user, token_required
 from meals import create_meal_plan, get_meal_plans, get_meal_plan, delete_meal_plan
 
@@ -76,6 +77,14 @@ def recommend():
             return jsonify({
                 "error": "No meal plans could be generated. Try adjusting your filters or increasing your budget."
             }), 422
+
+        for plan in plans:
+            grocery_list = consolidate_ingredients(plan["meals"])
+            store = suggest_store(grocery_list)
+            plan["groceryList"] = grocery_list
+            if store:
+                plan["suggestedStore"] = store
+                plan["totalCost"] = store["estimatedCost"]
 
         return jsonify({"plans": plans})
 
