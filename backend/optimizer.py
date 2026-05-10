@@ -72,9 +72,8 @@ def generate_meal_plans(recipes, meal_plan, num_plans=5):
     if len(candidates) < num_meals:
         return []
 
-    # Duplicate each candidate so combinations() can pick it 0, 1, or 2 times.
-    # Deduplicate equivalent combos by sorted recipe-ID tuple.
-    pool = [r for r in candidates for _ in range(2)]
+    # Allow duplicates only when the user requests more meals than we have candidates.
+    pool = [r for r in candidates for _ in range(2)] if num_meals > 10 else candidates
     seen = set()
 
     valid_plans = []

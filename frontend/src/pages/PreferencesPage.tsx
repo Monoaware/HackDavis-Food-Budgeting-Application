@@ -21,7 +21,7 @@ interface Props {
 
 export default function PreferencesPage({ onBack, onSubmit }: Props) {
   const [numMeals, setNumMeals] = useState(3)
-  const [budget, setBudget] = useState('30')
+  const [budget, setBudget] = useState('75')
   const [intolerances, setIntolerances] = useState<string[]>([])
   const [diets, setDiets] = useState<string[]>([])
   const [protein, setProtein] = useState('')
@@ -98,6 +98,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                     placeholder="e.g. 30"
                     value={maxPrepTime}
                     onChange={e => setMaxPrepTime(e.target.value)}
+                    onWheel={e => e.currentTarget.blur()}
                   />
                 </div>
               <div className="field">
@@ -112,6 +113,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                     placeholder="0.00"
                     value={budget}
                     onChange={e => setBudget(e.target.value)}
+                    onWheel={e => e.currentTarget.blur()}
                   />
                 </div>
               </div>
@@ -168,6 +170,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                   placeholder="e.g. 120"
                   value={protein}
                   onChange={e => setProtein(e.target.value)}
+                  onWheel={e => e.currentTarget.blur()}
                 />
               </div>
               <div className="field">
@@ -179,6 +182,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                   placeholder="e.g. 30"
                   value={fiber}
                   onChange={e => setFiber(e.target.value)}
+                  onWheel={e => e.currentTarget.blur()}
                 />
               </div>
             </div>
