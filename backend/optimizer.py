@@ -14,16 +14,10 @@ def is_recipe_allowed(recipe, meal_plan):
         allergy not in recipe_allergens for allergy in user_allergies
     )
 
-    dietary_tags = [t.lower() for t in meal_plan.get("dietaryTags", [])]
-    recipe_diets = [d.lower() for d in recipe.get("dietTags", [])]
-    matches_diet = not dietary_tags or any(
-        matches_user_diet(tag, recipe_diets) for tag in dietary_tags
-    )
-
     max_prep_time = meal_plan.get("maxPrepTime", 999)
     within_prep_time = recipe.get("prepTime", 999) <= max_prep_time
 
-    return avoids_allergens and matches_diet and within_prep_time
+    return avoids_allergens and within_prep_time
 
 
 def matches_user_diet(diet, recipe_diets):
