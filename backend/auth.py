@@ -9,6 +9,7 @@ from flask import request, jsonify
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
+import certifi
 
 load_dotenv()
 
@@ -20,6 +21,7 @@ print(f"[DEBUG] JWT_SECRET exists: {JWT_SECRET is not None}")
 
 users_collection = db["users"]
 
+client.admin.command("ping")
 print(f"[DEBUG] MongoDB connection established")
 print(f"[DEBUG] Database: {db.name}, Collection: {users_collection.name}")
 

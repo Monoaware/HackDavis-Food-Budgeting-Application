@@ -10,83 +10,832 @@
       "ingredient": "milk",
       "category": "dairy",
       "products": [
-        {"product_id": "tj_milk_001", "brand": "Trader Joe's", "name": "Trader Joe's Whole Milk", "size": "1 gallon", "price": 4.49, "in_stock": true},
-        {"product_id": "tj_milk_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Reduced Fat Milk", "size": "0.5 gallon", "price": 4.99, "in_stock": true},
-        {"product_id": "tj_milk_003", "brand": "Trader Joe's", "name": "Trader Joe's Oat Beverage", "size": "64 fl oz", "price": 3.99, "in_stock": true}
+        {
+          "product_id": "tj_milk_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Whole Milk",
+          "size": "1 gallon",
+          "price": 4.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_milk_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Reduced Fat Milk",
+          "size": "0.5 gallon",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_milk_003",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Oat Beverage",
+          "size": "64 fl oz",
+          "price": 3.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "eggs",
       "category": "dairy",
       "products": [
-        {"product_id": "tj_eggs_001", "brand": "Trader Joe's", "name": "Trader Joe's Cage-Free Large White Eggs", "size": "12 count", "price": 3.49, "in_stock": true},
-        {"product_id": "tj_eggs_002", "brand": "Trader Joe's", "name": "Trader Joe's Pasture-Raised Large Brown Eggs", "size": "12 count", "price": 5.99, "in_stock": true}
+        {
+          "product_id": "tj_eggs_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Cage-Free Large White Eggs",
+          "size": "12 count",
+          "price": 3.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_eggs_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Pasture-Raised Large Brown Eggs",
+          "size": "12 count",
+          "price": 5.99,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "chicken breast",
       "category": "meat",
       "products": [
-        {"product_id": "tj_chicken_001", "brand": "Trader Joe's", "name": "Trader Joe's Boneless Skinless Chicken Breast", "size": "1 lb", "price": 6.49, "in_stock": true},
-        {"product_id": "tj_chicken_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Boneless Skinless Chicken Breast", "size": "1 lb", "price": 8.99, "in_stock": false}
+        {
+          "product_id": "tj_chicken_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Boneless Skinless Chicken Breast",
+          "size": "1 lb",
+          "price": 6.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_chicken_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Boneless Skinless Chicken Breast",
+          "size": "1 lb",
+          "price": 8.99,
+          "in_stock": false
+        }
       ]
     },
     {
       "ingredient": "ground beef",
       "category": "meat",
       "products": [
-        {"product_id": "tj_beef_001", "brand": "Trader Joe's", "name": "Trader Joe's Ground Beef 80/20", "size": "1 lb", "price": 5.99, "in_stock": true},
-        {"product_id": "tj_beef_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Grass Fed Ground Beef", "size": "1 lb", "price": 8.49, "in_stock": true}
+        {
+          "product_id": "tj_beef_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Ground Beef 80/20",
+          "size": "1 lb",
+          "price": 5.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_beef_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Grass Fed Ground Beef",
+          "size": "1 lb",
+          "price": 8.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "pasta",
       "category": "pantry",
       "products": [
-        {"product_id": "tj_pasta_001", "brand": "Trader Joe's", "name": "Trader Joe's Spaghetti", "size": "16 oz", "price": 1.49, "in_stock": true},
-        {"product_id": "tj_pasta_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Brown Rice Pasta", "size": "12 oz", "price": 2.99, "in_stock": true},
-        {"product_id": "tj_pasta_003", "brand": "Trader Joe's", "name": "Trader Joe's Hearts of Palm Pasta", "size": "9 oz", "price": 3.49, "in_stock": true}
+        {
+          "product_id": "tj_pasta_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Spaghetti",
+          "size": "16 oz",
+          "price": 1.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_pasta_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Brown Rice Pasta",
+          "size": "12 oz",
+          "price": 2.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_pasta_003",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Hearts of Palm Pasta",
+          "size": "9 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "rice",
       "category": "pantry",
       "products": [
-        {"product_id": "tj_rice_001", "brand": "Trader Joe's", "name": "Trader Joe's Jasmine Rice", "size": "3 lb", "price": 3.99, "in_stock": true},
-        {"product_id": "tj_rice_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Brown Rice", "size": "3 lb", "price": 4.99, "in_stock": true},
-        {"product_id": "tj_rice_003", "brand": "Trader Joe's", "name": "Trader Joe's Frozen Brown Rice", "size": "3 pack", "price": 4.49, "in_stock": true}
+        {
+          "product_id": "tj_rice_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Jasmine Rice",
+          "size": "3 lb",
+          "price": 3.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_rice_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Brown Rice",
+          "size": "3 lb",
+          "price": 4.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_rice_003",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Frozen Brown Rice",
+          "size": "3 pack",
+          "price": 4.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "black beans",
       "category": "pantry",
       "products": [
-        {"product_id": "tj_beans_001", "brand": "Trader Joe's", "name": "Trader Joe's Black Beans", "size": "15 oz can", "price": 0.99, "in_stock": true},
-        {"product_id": "tj_beans_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Black Beans", "size": "15 oz can", "price": 1.29, "in_stock": true}
+        {
+          "product_id": "tj_beans_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Black Beans",
+          "size": "15 oz can",
+          "price": 0.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_beans_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Black Beans",
+          "size": "15 oz can",
+          "price": 1.29,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "tomatoes",
       "category": "produce",
       "products": [
-        {"product_id": "tj_tomato_001", "brand": "Trader Joe's", "name": "Trader Joe's Grape Tomatoes", "size": "1 pint", "price": 2.99, "in_stock": true},
-        {"product_id": "tj_tomato_002", "brand": "Trader Joe's", "name": "Trader Joe's Organic Roma Tomatoes", "size": "1 lb", "price": 3.49, "in_stock": true}
+        {
+          "product_id": "tj_tomato_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Grape Tomatoes",
+          "size": "1 pint",
+          "price": 2.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_tomato_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Organic Roma Tomatoes",
+          "size": "1 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "onion",
       "category": "produce",
       "products": [
-        {"product_id": "tj_onion_001", "brand": "Trader Joe's", "name": "Trader Joe's Yellow Onions", "size": "2 lb bag", "price": 2.49, "in_stock": true},
-        {"product_id": "tj_onion_002", "brand": "Trader Joe's", "name": "Trader Joe's Red Onions", "size": "2 lb bag", "price": 2.79, "in_stock": true}
+        {
+          "product_id": "tj_onion_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Yellow Onions",
+          "size": "2 lb bag",
+          "price": 2.49,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_onion_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Red Onions",
+          "size": "2 lb bag",
+          "price": 2.79,
+          "in_stock": true
+        }
       ]
     },
     {
       "ingredient": "olive oil",
       "category": "pantry",
       "products": [
-        {"product_id": "tj_oil_001", "brand": "Trader Joe's", "name": "Trader Joe's Extra Virgin Olive Oil", "size": "33.8 fl oz", "price": 9.99, "in_stock": true},
-        {"product_id": "tj_oil_002", "brand": "Trader Joe's", "name": "Trader Joe's Spanish Organic Extra Virgin Olive Oil", "size": "16.9 fl oz", "price": 7.99, "in_stock": false}
+        {
+          "product_id": "tj_oil_001",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Extra Virgin Olive Oil",
+          "size": "33.8 fl oz",
+          "price": 9.99,
+          "in_stock": true
+        },
+        {
+          "product_id": "tj_oil_002",
+          "brand": "Trader Joe's",
+          "name": "Trader Joe's Spanish Organic Extra Virgin Olive Oil",
+          "size": "16.9 fl oz",
+          "price": 7.99,
+          "in_stock": false
+        }
+      ]
+    },
+    {
+      "ingredient": "garlic",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_garlic_001",
+          "brand": "Trader Joe's",
+          "name": "Garlic Bulb",
+          "size": "3 count",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "bell pepper",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_bell_p_001",
+          "brand": "Trader Joe's",
+          "name": "Mini Sweet Peppers",
+          "size": "16 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "carrots",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_carrot_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Whole Carrots",
+          "size": "1 lb",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "avocado",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_avocad_001",
+          "brand": "Trader Joe's",
+          "name": "Hass Avocado",
+          "size": "1 count",
+          "price": 0.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "broccoli",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_brocco_001",
+          "brand": "Trader Joe's",
+          "name": "Broccoli Florets",
+          "size": "12 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "celery",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_celery_001",
+          "brand": "Trader Joe's",
+          "name": "Celery",
+          "size": "1 bunch",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "butternut squash",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_butter_001",
+          "brand": "Trader Joe's",
+          "name": "Butternut Squash",
+          "size": "1 count",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "asparagus",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_aspara_001",
+          "brand": "Trader Joe's",
+          "name": "Asparagus",
+          "size": "1 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "spinach",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_spinac_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Baby Spinach",
+          "size": "6 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "mushrooms",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_mushro_001",
+          "brand": "Trader Joe's",
+          "name": "White Button Mushrooms",
+          "size": "8 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sweet potato",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_sweet__001",
+          "brand": "Trader Joe's",
+          "name": "Organic Sweet Potatoes",
+          "size": "3 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "zucchini",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_zucchi_001",
+          "brand": "Trader Joe's",
+          "name": "Zucchini",
+          "size": "1 lb",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kale",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_kale_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Kale",
+          "size": "1 bunch",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lemon",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_lemon_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Lemons",
+          "size": "2 lb",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lime",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_lime_001",
+          "brand": "Trader Joe's",
+          "name": "Limes",
+          "size": "1 lb",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cilantro",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_cilant_001",
+          "brand": "Trader Joe's",
+          "name": "Fresh Cilantro",
+          "size": "1 bunch",
+          "price": 0.79,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ginger",
+      "category": "produce",
+      "products": [
+        {
+          "product_id": "tra_ginger_001",
+          "brand": "Trader Joe's",
+          "name": "Fresh Ginger Root",
+          "size": "4 oz",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "canned tomatoes",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_canned_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Diced Tomatoes",
+          "size": "14.5 oz",
+          "price": 1.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "peas",
+      "category": "frozen",
+      "products": [
+        {
+          "product_id": "tra_peas_001",
+          "brand": "Trader Joe's",
+          "name": "Frozen Peas",
+          "size": "16 oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "lentils",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_lentil_001",
+          "brand": "Trader Joe's",
+          "name": "Steamed Lentils",
+          "size": "17.6 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "kidney beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_kidney_001",
+          "brand": "Trader Joe's",
+          "name": "Red Kidney Beans",
+          "size": "15 oz",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "garbanzo beans",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_garban_001",
+          "brand": "Trader Joe's",
+          "name": "Chickpeas",
+          "size": "15 oz",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "quinoa",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_quinoa_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Tricolor Quinoa",
+          "size": "16 oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "vegetable broth",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_vegeta_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Vegetable Broth",
+          "size": "32 fl oz",
+          "price": 2.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "balsamic vinegar",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_balsam_001",
+          "brand": "Trader Joe's",
+          "name": "Balsamic Vinegar",
+          "size": "16.9 fl oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "honey",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_honey_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Raw Honey",
+          "size": "16 oz",
+          "price": 5.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "soy sauce",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_soy_sa_001",
+          "brand": "Trader Joe's",
+          "name": "Soy Sauce",
+          "size": "10 fl oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "coconut milk",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_coconu_001",
+          "brand": "Trader Joe's",
+          "name": "Organic Coconut Milk",
+          "size": "13.5 fl oz",
+          "price": 1.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "salt",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_salt_001",
+          "brand": "Trader Joe's",
+          "name": "Sea Salt",
+          "size": "26 oz",
+          "price": 1.29,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "black pepper",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_black__001",
+          "brand": "Trader Joe's",
+          "name": "Black Pepper",
+          "size": "3.1 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cumin",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_cumin_001",
+          "brand": "Trader Joe's",
+          "name": "Ground Cumin",
+          "size": "2.5 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "cinnamon",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_cinnam_001",
+          "brand": "Trader Joe's",
+          "name": "Ground Cinnamon",
+          "size": "2.5 oz",
+          "price": 2.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "chili powder",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_chili__001",
+          "brand": "Trader Joe's",
+          "name": "Chili Powder",
+          "size": "2.5 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "turmeric",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_turmer_001",
+          "brand": "Trader Joe's",
+          "name": "Ground Turmeric",
+          "size": "2 oz",
+          "price": 2.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "goat cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_goat_c_001",
+          "brand": "Trader Joe's",
+          "name": "Chevre Goat Cheese",
+          "size": "4 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "feta cheese",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_feta_c_001",
+          "brand": "Trader Joe's",
+          "name": "Feta Cheese Crumbles",
+          "size": "6 oz",
+          "price": 3.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "greek yogurt",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_greek__001",
+          "brand": "Trader Joe's",
+          "name": "Non-Fat Greek Yogurt",
+          "size": "32 oz",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "liquid egg",
+      "category": "dairy",
+      "products": [
+        {
+          "product_id": "tra_liquid_001",
+          "brand": "Trader Joe's",
+          "name": "Cage-Free Liquid Egg Whites",
+          "size": "16 fl oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "pork",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "tra_pork_001",
+          "brand": "Trader Joe's",
+          "name": "Pork Tenderloin",
+          "size": "1 lb",
+          "price": 4.49,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "ground turkey",
+      "category": "meat",
+      "products": [
+        {
+          "product_id": "tra_ground_001",
+          "brand": "Trader Joe's",
+          "name": "Ground Turkey",
+          "size": "1 lb",
+          "price": 4.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "sesame oil",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_sesame_001",
+          "brand": "Trader Joe's",
+          "name": "Toasted Sesame Oil",
+          "size": "8 fl oz",
+          "price": 3.99,
+          "in_stock": true
+        }
+      ]
+    },
+    {
+      "ingredient": "walnuts",
+      "category": "pantry",
+      "products": [
+        {
+          "product_id": "tra_walnut_001",
+          "brand": "Trader Joe's",
+          "name": "Walnut Halves & Pieces",
+          "size": "12 oz",
+          "price": 5.99,
+          "in_stock": true
+        }
       ]
     }
   ]

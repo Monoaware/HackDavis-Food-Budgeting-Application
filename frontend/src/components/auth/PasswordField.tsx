@@ -4,9 +4,11 @@ interface Props {
   id: string
   label: string
   autoComplete?: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function PasswordField({ id, label, autoComplete }: Props) {
+export default function PasswordField({ id, label, autoComplete, value, onChange }: Props) {
   const [visible, setVisible] = useState(false)
 
   return (
@@ -18,6 +20,8 @@ export default function PasswordField({ id, label, autoComplete }: Props) {
           type={visible ? 'text' : 'password'}
           placeholder="••••••••"
           autoComplete={autoComplete}
+          value={value}
+          onChange={onChange}
         />
         <button
           type="button"

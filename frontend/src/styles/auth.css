@@ -2,13 +2,13 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
 }
 
-#root {
+.auth-layout {
   display: flex;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* ── LEFT PANEL ─────────────────────────────────────── */
@@ -182,8 +182,7 @@ body {
 /* ── MOBILE ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  body { overflow: auto; }
-  #root { flex-direction: column; height: auto; min-height: 100vh; }
+  .auth-layout { flex-direction: column; height: auto; min-height: 100vh; overflow: auto; }
 
   .panel-left {
     width: 100%;

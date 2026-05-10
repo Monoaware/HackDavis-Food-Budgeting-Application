@@ -1,0 +1,244 @@
+/* ── NAV ─────────────────────────────────────────────── */
+
+.dash-nav {
+  background: #1C4223;
+  padding: 0 3rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dash-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dash-nav-user {
+  font-size: 0.875rem;
+  color: rgba(250, 248, 243, 0.7);
+}
+
+.btn-signout {
+  background: none;
+  border: 1.5px solid rgba(250, 248, 243, 0.25);
+  border-radius: 7px;
+  color: rgba(250, 248, 243, 0.8);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.38rem 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-signout:hover {
+  border-color: rgba(250, 248, 243, 0.6);
+  color: var(--cream);
+}
+
+/* ── HERO ────────────────────────────────────────────── */
+
+.dash-hero {
+  background: var(--green);
+  padding: 3rem 3rem 4rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.dash-greeting {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.dash-sub {
+  font-size: 0.9rem;
+  color: rgba(250, 248, 243, 0.5);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.btn-new-plan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--rust);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 4px 14px rgba(201, 95, 42, 0.35);
+}
+
+.btn-new-plan:hover {
+  background: var(--rust-dark);
+  box-shadow: 0 4px 20px rgba(201, 95, 42, 0.45);
+}
+
+.btn-new-plan:active { transform: scale(0.99); }
+
+/* ── MAIN CONTENT ────────────────────────────────────── */
+
+.dash-main {
+  padding: 2.5rem 3rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dash-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+/* ── PLAN CARDS GRID ─────────────────────────────────── */
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.plan-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: box-shadow 0.2s, transform 0.15s;
+  animation: fadeUp 0.4s ease both;
+}
+
+.plan-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.plan-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.plan-cost {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.plan-meals {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.plan-meals li {
+  font-size: 0.875rem;
+  color: var(--text);
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+.plan-meals li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rust);
+  opacity: 0.6;
+}
+
+.plan-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.plan-store {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.plan-store-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.btn-view-plan {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+  background: none;
+  border: 1.5px solid var(--green);
+  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-view-plan:hover {
+  background: var(--green);
+  color: var(--cream);
+}
+
+/* ── EMPTY STATE ─────────────────────────────────────── */
+
+.empty-state {
+  background: var(--white);
+  border: 1.5px dashed var(--border);
+  border-radius: 12px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ── MOBILE ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .dash-nav  { padding: 0 1.25rem; }
+  .dash-hero { padding: 2rem 1.25rem 3rem; }
+  .dash-main { padding: 2rem 1.25rem 3rem; }
+}

@@ -12,11 +12,11 @@ _FALLBACK_PATH = os.path.join(os.path.dirname(__file__), "data", "fallback_recip
 _cache = {}
 
 
-def _cache_key(user):
+def _cache_key(meal_plan):
     return json.dumps({
-        "allergens": sorted(user.get("allergens", [])),
-        "diet": user.get("dietaryTags", [""])[0] if user.get("dietaryTags") else "",
-        "maxPrepTime": user.get("maxPrepTime"),
+        "allergens": sorted(meal_plan.get("allergens", [])),
+        "diet": meal_plan.get("dietaryTags", [""])[0] if meal_plan.get("dietaryTags") else "",
+        "maxPrepTime": meal_plan.get("maxPrepTime"),
     }, sort_keys=True)
 
 
@@ -33,14 +33,16 @@ def _normalize_recipe(raw):
     # Spoonacular returns total nutrition for the whole recipe; divide by servings
     # to get per-serving values used for nutritional scoring.
     servings = max(raw.get("servings", 1), 1)
-    # Ingredient amounts are totals for the whole recipe (kept as-is for grocery shopping).
+    # complexSearch returns ingredients under nutrition.ingredients (not extendedIngredients).
+    # Amounts here are per-serving already; multiply back by servings for grocery totals.
+    nutrition_ingredients = nutrition.get("ingredients", [])
     ingredients = [
         {
             "name": ing.get("name", ""),
-            "amount": ing.get("amount", 0),
+            "amount": round(ing.get("amount", 0) * servings, 2),
             "unit": ing.get("unit", ""),
         }
-        for ing in raw.get("extendedIngredients", [])
+        for ing in nutrition_ingredients
     ]
     return {
         "id": raw.get("id"),
@@ -48,6 +50,7 @@ def _normalize_recipe(raw):
         "prepTime": raw.get("readyInMinutes", 0),
         "protein": round(_extract_nutrient(nutrients, "Protein") / servings, 2),
         "fiber": round(_extract_nutrient(nutrients, "Fiber") / servings, 2),
+        "calories": round(_extract_nutrient(nutrients, "Calories") / servings, 2),
         "servings": servings,
         "dietTags": raw.get("diets", []),
         "allergens": [],
@@ -63,14 +66,14 @@ def _load_fallback():
         return json.load(f)
 
 
-def fetch_recipes(user):
-    key = _cache_key(user)
+def fetch_recipes(meal_plan):
+    key = _cache_key(meal_plan)
     if key in _cache:
         return _cache[key]
 
-    allergens = user.get("allergens", [])
-    dietary_tags = user.get("dietaryTags", [])
-    max_prep_time = user.get("maxPrepTime", None)
+    allergens = meal_plan.get("allergens", [])
+    dietary_tags = meal_plan.get("dietaryTags", [])
+    max_prep_time = meal_plan.get("maxPrepTime", None)
 
     params = {
         "apiKey": SPOONACULAR_API_KEY,

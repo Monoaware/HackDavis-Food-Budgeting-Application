@@ -7,20 +7,20 @@ _MAX_CANDIDATES = 15
 # =================================================================
 #  Hard-constraint filter: allergens, dietary tags, prep time.
 # =================================================================
-def is_recipe_allowed(recipe, user):
-    user_allergies = user.get("allergens", [])
+def is_recipe_allowed(recipe, meal_plan):
+    user_allergies = meal_plan.get("allergens", [])
     recipe_allergens = recipe.get("allergens", [])
     avoids_allergens = all(
         allergy not in recipe_allergens for allergy in user_allergies
     )
 
-    dietary_tags = user.get("dietaryTags", [])
+    dietary_tags = meal_plan.get("dietaryTags", [])
     recipe_diets = recipe.get("dietTags", [])
     matches_diet = not dietary_tags or any(
         matches_user_diet(tag, recipe_diets) for tag in dietary_tags
     )
 
-    max_prep_time = user.get("maxPrepTime", 999)
+    max_prep_time = meal_plan.get("maxPrepTime", 999)
     within_prep_time = recipe.get("prepTime", 999) <= max_prep_time
 
     return avoids_allergens and matches_diet and within_prep_time
@@ -36,9 +36,9 @@ def matches_user_diet(diet, recipe_diets):
 #  Score a plan's total nutrition against per-plan goals.
 #  proteinGoal / fiberGoal are targets for all meals combined.
 # =================================================================
-def score_plan(plan, user):
-    protein_goal = user.get("proteinGoal", 0)
-    fiber_goal = user.get("fiberGoal", 0)
+def score_plan(plan, meal_plan):
+    protein_goal = meal_plan.get("proteinGoal", 0)
+    fiber_goal = meal_plan.get("fiberGoal", 0)
     total_protein = plan.get("totalProtein", 0)
     total_fiber = plan.get("totalFiber", 0)
 
@@ -63,11 +63,11 @@ def score_plan(plan, user):
 #  Candidate pool is capped at _MAX_CANDIDATES to keep the number
 #  of combinations tractable (C(15,5) = 3003, C(15,7) = 6435).
 # =================================================================
-def generate_meal_plans(recipes, user, num_plans=5):
-    budget = user.get("budget", float("inf"))
-    num_meals = user.get("numMeals", 3)
+def generate_meal_plans(recipes, meal_plan, num_plans=5):
+    budget = meal_plan.get("budget", float("inf"))
+    num_meals = meal_plan.get("numMeals", 3)
 
-    allowed = [r for r in recipes if is_recipe_allowed(r, user)]
+    allowed = [r for r in recipes if is_recipe_allowed(r, meal_plan)]
 
     for recipe in allowed:
         if "costPerServing" not in recipe:
@@ -95,15 +95,19 @@ def generate_meal_plans(recipes, user, num_plans=5):
 
         total_protein = round(sum(r.get("protein", 0) for r in combo), 2)
         total_fiber = round(sum(r.get("fiber", 0) for r in combo), 2)
+        total_calories = round(sum(r.get("calories", 0) for r in combo), 2)
+        total_prep = sum(r.get("prepTime", 0) for r in combo)
 
         plan = {
             "meals": list(combo),
             "totalProtein": total_protein,
             "totalFiber": total_fiber,
+            "totalCalories": total_calories,
+            "totalPrepTime": total_prep,
             "totalCost": total_cost,
             "estimatedCost": total_cost,
         }
-        plan["totalScore"] = score_plan(plan, user)
+        plan["totalScore"] = score_plan(plan, meal_plan)
         valid_plans.append(plan)
 
     valid_plans.sort(key=lambda p: p["totalScore"], reverse=True)
