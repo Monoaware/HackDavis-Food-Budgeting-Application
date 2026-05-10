@@ -8,6 +8,7 @@ interface MealPlan {
   Diets?: string[]
   Intolerances?: string[]
   created_at: string
+  meals?: Array<{ title: string; image?: string }>
 }
 
 interface Props {
@@ -108,6 +109,8 @@ function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
         {plan.number_of_meals} meal{plan.number_of_meals !== 1 ? 's' : ''}
       </div>
 
+      <MealThumbs meals={plan.meals} />
+
       {tags.length > 0 && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
           {tags.map(tag => (
@@ -128,6 +131,34 @@ function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
         <div />
         <button className="btn-view-plan">View</button>
       </div>
+    </div>
+  )
+}
+
+const MAX_THUMBS = 5
+
+function MealThumbs({ meals }: { meals?: Array<{ title: string; image?: string }> }) {
+  if (!meals || meals.length === 0) return null
+  const withImages = meals.filter(m => m.image)
+  if (withImages.length === 0) return null
+
+  const visible = withImages.slice(0, MAX_THUMBS)
+  const overflow = withImages.length - visible.length
+
+  return (
+    <div className="meal-thumbs">
+      {visible.map((meal, i) => (
+        <img
+          key={i}
+          className="meal-thumb"
+          src={meal.image}
+          alt={meal.title}
+          title={meal.title}
+        />
+      ))}
+      {overflow > 0 && (
+        <div className="meal-thumb-overflow">+{overflow}</div>
+      )}
     </div>
   )
 }
