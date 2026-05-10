@@ -5,6 +5,11 @@ interface MealPlan {
   _id: string
   number_of_meals: number
   budget?: number
+  totalCost?: number
+  totalProtein?: number
+  totalFiber?: number
+  totalCalories?: number
+  totalPrepTime?: number
   Diets?: string[]
   Intolerances?: string[]
   created_at: string
@@ -100,16 +105,29 @@ function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
     <div className="plan-card" style={{ animationDelay: `${delay}s` }}>
       <div className="plan-card-header">
         <span className="plan-cost">
-          {plan.budget != null ? `$${plan.budget.toFixed(2)}` : 'No budget'}
+          {plan.totalCost != null ? `$${plan.totalCost.toFixed(2)}` : plan.budget != null ? `$${plan.budget.toFixed(2)}` : '—'}
         </span>
         <span className="plan-date">{date}</span>
       </div>
 
-      <div style={{ fontSize: '0.875rem', color: 'var(--muted)' }}>
-        {plan.number_of_meals} meal{plan.number_of_meals !== 1 ? 's' : ''}
-      </div>
-
       <MealThumbs meals={plan.meals} />
+
+      {plan.meals && plan.meals.length > 0 && (
+        <ul className="plan-meals">
+          {plan.meals.map((meal, i) => (
+            <li key={i}>{meal.title}</li>
+          ))}
+        </ul>
+      )}
+
+      {(plan.totalProtein != null || plan.totalCalories != null || plan.totalFiber != null || plan.totalPrepTime != null) && (
+        <div className="plan-stats">
+          {plan.totalProtein  != null && <span>{plan.totalProtein}g protein</span>}
+          {plan.totalCalories != null && <span>{plan.totalCalories} kcal</span>}
+          {plan.totalFiber    != null && <span>{plan.totalFiber}g fiber</span>}
+          {plan.totalPrepTime != null && <span>{plan.totalPrepTime} min prep</span>}
+        </div>
+      )}
 
       {tags.length > 0 && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>

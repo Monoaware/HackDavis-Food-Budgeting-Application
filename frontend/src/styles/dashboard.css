@@ -219,6 +219,19 @@
   color: var(--cream);
 }
 
+/* ── PLAN STATS ──────────────────────────────────────── */
+
+.plan-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+}
+
+.plan-stats span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 /* ── MEAL THUMBNAILS ─────────────────────────────────── */
 
 .meal-thumbs {
