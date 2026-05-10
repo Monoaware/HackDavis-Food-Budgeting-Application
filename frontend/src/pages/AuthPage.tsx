@@ -19,7 +19,7 @@ export default function AuthPage({ onSuccess }: Props) {
   }
 
   return (
-    <>
+    <div className="auth-layout">
       <div className="panel-left">
         <PanelDecoration />
 
@@ -65,7 +65,7 @@ export default function AuthPage({ onSuccess }: Props) {
           }
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
