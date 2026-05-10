@@ -15,7 +15,7 @@ export interface PlanPreferences {
 
 interface Props {
   onBack: () => void
-  onSubmit: (prefs: PlanPreferences) => void
+  onSubmit: (prefs: PlanPreferences) => Promise<void>
 }
 
 export default function PreferencesPage({ onBack, onSubmit }: Props) {
@@ -25,14 +25,24 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
   const [diets, setDiets] = useState<string[]>([])
   const [protein, setProtein] = useState('')
   const [fiber, setFiber] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function togglePill(list: string[], item: string, setList: (v: string[]) => void) {
     setList(list.includes(item) ? list.filter(i => i !== item) : [...list, item])
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    onSubmit({ numMeals, budget, intolerances, diets, proteinGoal: protein, fiberGoal: fiber })
+    setError('')
+    setLoading(true)
+    try {
+      await onSubmit({ numMeals, budget, intolerances, diets, proteinGoal: protein, fiberGoal: fiber })
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -154,8 +164,9 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
           </div>
 
           <div className="pref-submit-row">
-            <button type="submit" className="btn-submit">
-              Generate meal plan →
+            {error && <p className="form-error" style={{ marginBottom: '0.75rem' }}>{error}</p>}
+            <button type="submit" className="btn-submit" disabled={loading}>
+              {loading ? 'Finding meals…' : 'Generate meal plan →'}
             </button>
           </div>
 
