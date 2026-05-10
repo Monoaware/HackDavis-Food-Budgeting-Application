@@ -1,0 +1,204 @@
+/* ── PAGE LAYOUT ────────────────────────────────────── */
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ── LEFT PANEL ─────────────────────────────────────── */
+
+.panel-left {
+  width: 52%;
+  background: var(--green);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 3.5rem;
+  animation: panelIn 0.7s cubic-bezier(.22,.68,0,1.2) both;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.panel-left .deco {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.panel-top {
+  position: relative;
+  z-index: 2;
+}
+
+.panel-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.panel-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+
+.panel-headline em {
+  font-style: italic;
+  color: rgba(250, 248, 243, 0.55);
+}
+
+.panel-tagline {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(250, 248, 243, 0.5);
+  letter-spacing: 0.03em;
+}
+
+/* ── RIGHT PANEL ────────────────────────────────────── */
+
+.panel-right {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+  animation: formIn 0.6s cubic-bezier(.22,.68,0,1.2) 0.15s both;
+}
+
+@keyframes formIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* ── TAB TOGGLE ─────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  background: var(--cream-dark);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  border-radius: 7px;
+  transition: color 0.25s;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-btn.active { color: var(--text); }
+
+.tab-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: calc(50% - 4px);
+  background: var(--white);
+  border-radius: 7px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.2);
+}
+
+.tabs.on-signup .tab-indicator { transform: translateX(100%); }
+
+/* ── FORM HEADER ────────────────────────────────────── */
+
+.form-header {
+  margin-bottom: 1.75rem;
+  min-height: 4rem;
+}
+
+.form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.form-sub {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* ── FORM PANELS ────────────────────────────────────── */
+
+.form-panel {
+  animation: fadeUp 0.28s ease both;
+}
+
+/* ── FORGOT PASSWORD ────────────────────────────────── */
+
+.forgot {
+  text-align: right;
+  margin-bottom: 1rem;
+  margin-top: -0.4rem;
+}
+
+.forgot a {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot a:hover { color: var(--green); }
+
+/* ── MOBILE ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  body { overflow: auto; }
+  #root { flex-direction: column; height: auto; min-height: 100vh; }
+
+  .panel-left {
+    width: 100%;
+    min-height: 200px;
+    padding: 2rem;
+    justify-content: center;
+    animation: none;
+  }
+
+  .panel-headline { font-size: 2rem; margin-top: 1rem; }
+  .panel-tagline  { display: none; }
+
+  .panel-right {
+    width: 100%;
+    padding: 2.5rem 1.5rem 3rem;
+    animation: none;
+  }
+}
