@@ -1,0 +1,221 @@
+/* ── HEADER ──────────────────────────────────────────── */
+
+.results-header {
+  background: var(--green);
+  padding: 0 3rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.results-header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+/* ── BODY ────────────────────────────────────────────── */
+
+.results-body {
+  padding: 2.5rem 3rem 4rem;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.results-intro {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ── PLAN CARD ───────────────────────────────────────── */
+
+.result-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease both;
+  transition: box-shadow 0.2s;
+}
+
+.result-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+}
+
+.result-card.top-pick {
+  border-color: var(--green);
+}
+
+/* ── CARD HEADER ─────────────────────────────────────── */
+
+.result-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.result-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.result-rank {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.badge-top {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--green);
+  color: var(--cream);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.result-cost {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* ── GEMINI EXPLANATION ──────────────────────────────── */
+
+.result-explanation {
+  padding: 0.9rem 1.5rem;
+  font-size: 0.845rem;
+  color: var(--muted);
+  font-style: italic;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.55;
+}
+
+/* ── MEALS LIST ──────────────────────────────────────── */
+
+.result-meals {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.result-meal-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.result-meal-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  flex: 1;
+}
+
+.result-meal-meta {
+  font-size: 0.76rem;
+  color: var(--muted);
+  white-space: nowrap;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ── TOTALS ROW ──────────────────────────────────────── */
+
+.result-totals {
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.result-total-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.result-total-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.result-total-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── CARD FOOTER ─────────────────────────────────────── */
+
+.result-card-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-store {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.result-store-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.btn-select-plan {
+  padding: 0.6rem 1.25rem;
+  background: var(--rust);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s, opacity 0.2s;
+  box-shadow: 0 3px 10px rgba(201, 95, 42, 0.28);
+}
+
+.btn-select-plan:hover  { background: var(--rust-dark); }
+.btn-select-plan:active { transform: scale(0.98); }
+.btn-select-plan:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── MOBILE ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .results-header { padding: 0 1.25rem; }
+  .results-body   { padding: 2rem 1.25rem 3rem; }
+  .result-meal-row { flex-direction: column; gap: 0.2rem; }
+  .result-meal-meta { justify-content: flex-start; }
+}

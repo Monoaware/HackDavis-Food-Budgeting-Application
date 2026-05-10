@@ -1,36 +1,14 @@
+import { useEffect, useState } from 'react'
 import '../styles/dashboard.css'
 
 interface MealPlan {
-  id: number
-  meals: string[]
-  cost: number
-  store: string
-  date: string
+  _id: string
+  number_of_meals: number
+  budget?: number
+  Diets?: string[]
+  Intolerances?: string[]
+  created_at: string
 }
-
-const MOCK_PLANS: MealPlan[] = [
-  {
-    id: 1,
-    meals: ['Lemon Herb Chicken', 'Black Bean Tacos', 'Pasta Primavera'],
-    cost: 45.20,
-    store: "Trader Joe's",
-    date: '2 days ago',
-  },
-  {
-    id: 2,
-    meals: ['Lentil Soup', 'Veggie Stir Fry', 'Quinoa Bowl', 'Egg Fried Rice', 'Greek Salad'],
-    cost: 72.80,
-    store: 'Safeway',
-    date: '1 week ago',
-  },
-  {
-    id: 3,
-    meals: ['Chickpea Curry', 'Turkey Wrap', 'Tomato Basil Soup'],
-    cost: 38.50,
-    store: 'Kroger',
-    date: '2 weeks ago',
-  },
-]
 
 interface Props {
   onSignOut: () => void
@@ -38,6 +16,28 @@ interface Props {
 }
 
 export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
+  const [plans, setPlans] = useState<MealPlan[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    async function fetchPlans() {
+      try {
+        const res = await fetch('/api/meal-plans', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        })
+        if (!res.ok) throw new Error('Failed to load plans')
+        const data = await res.json()
+        setPlans(data.meal_plans)
+      } catch {
+        setError('Could not load your plans.')
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchPlans()
+  }, [])
+
   return (
     <div>
       <nav className="dash-nav">
@@ -50,13 +50,12 @@ export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
         </div>
 
         <div className="dash-nav-right">
-          <span className="dash-nav-user">Jane Doe</span>
           <button className="btn-signout" onClick={onSignOut}>Sign out</button>
         </div>
       </nav>
 
       <div className="dash-hero">
-        <h1 className="dash-greeting">Good morning, Jane.</h1>
+        <h1 className="dash-greeting">Your meal plans.</h1>
         <p className="dash-sub">Ready to plan your next week?</p>
         <button className="btn-new-plan" onClick={onCreatePlan}>
           <PlusIcon />
@@ -65,16 +64,22 @@ export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
       </div>
 
       <main className="dash-main">
-        <h2 className="dash-section-title">Your meal plans</h2>
+        <h2 className="dash-section-title">Saved plans</h2>
 
-        {MOCK_PLANS.length === 0 ? (
+        {loading && <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Loading…</p>}
+
+        {error && <p className="form-error">{error}</p>}
+
+        {!loading && !error && plans.length === 0 && (
           <div className="empty-state">
             <p>No plans yet. Create your first one above.</p>
           </div>
-        ) : (
+        )}
+
+        {!loading && plans.length > 0 && (
           <div className="plan-grid">
-            {MOCK_PLANS.map((plan, i) => (
-              <PlanCard key={plan.id} plan={plan} delay={i * 0.07} />
+            {plans.map((plan, i) => (
+              <PlanCard key={plan._id} plan={plan} delay={i * 0.07} />
             ))}
           </div>
         )}
@@ -84,24 +89,43 @@ export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
 }
 
 function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
+  const date = new Date(plan.created_at).toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric',
+  })
+
+  const tags = [...(plan.Diets ?? []), ...(plan.Intolerances ?? [])]
+
   return (
     <div className="plan-card" style={{ animationDelay: `${delay}s` }}>
       <div className="plan-card-header">
-        <span className="plan-cost">${plan.cost.toFixed(2)}</span>
-        <span className="plan-date">{plan.date}</span>
+        <span className="plan-cost">
+          {plan.budget != null ? `$${plan.budget.toFixed(2)}` : 'No budget'}
+        </span>
+        <span className="plan-date">{date}</span>
       </div>
 
-      <ul className="plan-meals">
-        {plan.meals.map(meal => (
-          <li key={meal}>{meal}</li>
-        ))}
-      </ul>
+      <div style={{ fontSize: '0.875rem', color: 'var(--muted)' }}>
+        {plan.number_of_meals} meal{plan.number_of_meals !== 1 ? 's' : ''}
+      </div>
+
+      {tags.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+          {tags.map(tag => (
+            <span key={tag} style={{
+              fontSize: '0.72rem',
+              padding: '0.2rem 0.6rem',
+              borderRadius: '20px',
+              border: '1px solid var(--border)',
+              color: 'var(--muted)',
+            }}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="plan-card-footer">
-        <div className="plan-store">
-          <span className="plan-store-dot" />
-          {plan.store}
-        </div>
+        <div />
         <button className="btn-view-plan">View</button>
       </div>
     </div>

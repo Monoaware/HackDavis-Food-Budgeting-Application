@@ -10,8 +10,8 @@ _MODEL = "gemini-2.5-flash"
 
 
 def _build_prompt(plans, meal_plan):
-    protein_goal = meal_plan.get("proteinGoal", 0)
-    fiber_goal = meal_plan.get("fiberGoal", 0)
+    protein_goal = meal_plan.get("proteinGoal")
+    fiber_goal   = meal_plan.get("fiberGoal")
     ranking_query = meal_plan.get("rankingQuery", "").strip()
 
     plan_summaries = []
@@ -36,16 +36,24 @@ def _build_prompt(plans, meal_plan):
             "totalScore": plan.get("totalScore", 0),
         })
 
+    goals = []
+    if protein_goal:
+        goals.append(f"- Protein: {protein_goal}g per plan")
+    if fiber_goal:
+        goals.append(f"- Fiber: {fiber_goal}g per plan")
+    goals_section = "\n".join(goals) if goals else "- No specific nutrition goals set."
+
     if ranking_query:
         ranking_instruction = f'The user has a specific request: "{ranking_query}". Rank the plans primarily based on this request, using the data provided to answer it as precisely as possible.'
+    elif goals:
+        ranking_instruction = "Rank the plans based on how well they help the user meet their stated nutrition goals. Consider overall nutritional balance and variety."
     else:
-        ranking_instruction = "Rank the plans based on how well they help the user meet their protein and fiber goals. Consider overall nutritional balance and variety."
+        ranking_instruction = "The user has no specific nutrition goals. Rank the plans based on overall nutritional balance, variety, and reasonable macros."
 
     return f"""You are a nutrition expert helping rank meal plans for a user.
 
 User's goals:
-- Protein: {protein_goal}g per plan
-- Fiber: {fiber_goal}g per plan
+{goals_section}
 
 Here are the candidate meal plans with full nutritional and timing data:
 {json.dumps(plan_summaries, indent=2)}
