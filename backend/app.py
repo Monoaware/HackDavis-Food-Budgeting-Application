@@ -68,7 +68,7 @@ def recommend():
         return jsonify({"plans": plans})
 
     except Exception as e:
-        console.log(str(e));
+        print(str(e))
         return jsonify({
             "error": "Failed to generate recommendations.",
             "details": str(e)
