@@ -117,12 +117,13 @@ def lookup_price(ingredient_name, store_name, amount=0, unit=""):
     """Return the minimum cost to purchase `amount` `unit` of an ingredient
     at `store_name`.
 
-    For each catalogue entry that matches the ingredient name, iterates all
-    in-stock products, determines how many packages are needed to cover the
-    required amount, and returns the cheapest total across all product options.
-    Returns None if the ingredient is absent from the catalogue or all matching
-    products are out of stock.
+    Kroger uses the live API; all other stores use the static JSON catalogue.
+    Returns None if the ingredient cannot be found or all products are out of stock.
     """
+    if store_name == "Kroger":
+        import kroger_api
+        return kroger_api.lookup_price(ingredient_name, amount, unit)
+
     name = ingredient_name.lower()
     for entry in _store_catalogues.get(store_name, []):
         cat_key = entry["ingredient"].lower()
