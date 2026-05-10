@@ -14,9 +14,10 @@ interface MealPlan {
 interface Props {
   onSignOut: () => void
   onCreatePlan: () => void
+  onViewPlan: (planId: string) => void
 }
 
-export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
+export default function DashboardPage({ onSignOut, onCreatePlan, onViewPlan }: Props) {
   const [plans, setPlans] = useState<MealPlan[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -80,7 +81,7 @@ export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
         {!loading && plans.length > 0 && (
           <div className="plan-grid">
             {plans.map((plan, i) => (
-              <PlanCard key={plan._id} plan={plan} delay={i * 0.07} />
+              <PlanCard key={plan._id} plan={plan} delay={i * 0.07} onView={onViewPlan} />
             ))}
           </div>
         )}
@@ -89,7 +90,7 @@ export default function DashboardPage({ onSignOut, onCreatePlan }: Props) {
   )
 }
 
-function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
+function PlanCard({ plan, delay, onView }: { plan: MealPlan; delay: number; onView: (planId: string) => void }) {
   const date = new Date(plan.created_at).toLocaleDateString('en-US', {
     month: 'short', day: 'numeric', year: 'numeric',
   })
@@ -129,7 +130,7 @@ function PlanCard({ plan, delay }: { plan: MealPlan; delay: number }) {
 
       <div className="plan-card-footer">
         <div />
-        <button className="btn-view-plan">View</button>
+        <button className="btn-view-plan" onClick={() => onView(plan._id)}>View</button>
       </div>
     </div>
   )

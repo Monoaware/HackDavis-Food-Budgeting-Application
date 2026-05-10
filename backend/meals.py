@@ -2,6 +2,7 @@
 
 import datetime
 from db import db
+from bson import ObjectId
 
 meal_plans_collection = db["meal_plans"]
 
@@ -58,3 +59,20 @@ def get_meal_plans(current_user):
         .sort("created_at", -1)
     )
     return {"meal_plans": [_serialize(p) for p in plans]}, 200
+
+
+def get_meal_plan(current_user, meal_plan_id):
+    try:
+        plan = meal_plans_collection.find_one({
+            "_id": ObjectId(meal_plan_id),
+            "user_email": current_user["email"]
+        })
+
+        if not plan:
+            return {"error": "Meal plan not found"}, 404
+
+        plan["_id"] = str(plan["_id"])
+        return {"meal_plan": plan}, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
