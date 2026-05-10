@@ -243,5 +243,214 @@
       {"name": "parmesan", "amount": 30, "unit": "g"}
     ],
     "score": 0
+  },
+  {
+    "id": 1013,
+    "title": "Grilled Chicken Breast with Roasted Broccoli",
+    "prepTime": 25,
+    "protein": 62.0,
+    "fiber": 5.2,
+    "calories": 380.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chicken breast", "amount": 250, "unit": "g"},
+      {"name": "broccoli", "amount": 2, "unit": "cups"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "lemon", "amount": 1, "unit": ""}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1014,
+    "title": "Lean Ground Beef Rice Bowl",
+    "prepTime": 20,
+    "protein": 52.0,
+    "fiber": 3.0,
+    "calories": 520.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "ground beef", "amount": 250, "unit": "g"},
+      {"name": "rice", "amount": 1, "unit": "cup"},
+      {"name": "onion", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "olive oil", "amount": 1, "unit": "tbsp"},
+      {"name": "soy sauce", "amount": 2, "unit": "tbsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1015,
+    "title": "Pork Tenderloin with Sweet Potato",
+    "prepTime": 35,
+    "protein": 48.0,
+    "fiber": 4.8,
+    "calories": 450.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "pork", "amount": 250, "unit": "g"},
+      {"name": "sweet potato", "amount": 1, "unit": "large"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "garlic", "amount": 2, "unit": "cloves"},
+      {"name": "honey", "amount": 1, "unit": "tbsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1016,
+    "title": "High-Protein Chicken & Black Bean Bowl",
+    "prepTime": 25,
+    "protein": 58.0,
+    "fiber": 12.5,
+    "calories": 490.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chicken breast", "amount": 200, "unit": "g"},
+      {"name": "black beans", "amount": 1, "unit": "cup"},
+      {"name": "rice", "amount": 0.5, "unit": "cup"},
+      {"name": "bell pepper", "amount": 1, "unit": ""},
+      {"name": "onion", "amount": 0.5, "unit": ""},
+      {"name": "olive oil", "amount": 1, "unit": "tbsp"},
+      {"name": "cumin", "amount": 1, "unit": "tsp"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1017,
+    "title": "Ground Turkey & Spinach Skillet",
+    "prepTime": 20,
+    "protein": 46.0,
+    "fiber": 4.0,
+    "calories": 390.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "ground turkey", "amount": 250, "unit": "g"},
+      {"name": "spinach", "amount": 3, "unit": "cups"},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "onion", "amount": 1, "unit": ""},
+      {"name": "olive oil", "amount": 1, "unit": "tbsp"},
+      {"name": "tomatoes", "amount": 1, "unit": "cup"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1018,
+    "title": "Beef & Broccoli Stir Fry",
+    "prepTime": 20,
+    "protein": 50.0,
+    "fiber": 5.5,
+    "calories": 460.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "ground beef", "amount": 200, "unit": "g"},
+      {"name": "broccoli", "amount": 3, "unit": "cups"},
+      {"name": "garlic", "amount": 3, "unit": "cloves"},
+      {"name": "soy sauce", "amount": 3, "unit": "tbsp"},
+      {"name": "sesame oil", "amount": 1, "unit": "tbsp"},
+      {"name": "ginger", "amount": 1, "unit": "tsp"},
+      {"name": "rice", "amount": 1, "unit": "cup"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1019,
+    "title": "Egg White & Veggie Omelette",
+    "prepTime": 15,
+    "protein": 38.0,
+    "fiber": 3.5,
+    "calories": 280.0,
+    "dietTags": ["vegetarian", "gluten free"],
+    "allergens": ["egg"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "eggs", "amount": 6, "unit": ""},
+      {"name": "spinach", "amount": 1, "unit": "cup"},
+      {"name": "mushrooms", "amount": 1, "unit": "cup"},
+      {"name": "bell pepper", "amount": 0.5, "unit": ""},
+      {"name": "olive oil", "amount": 1, "unit": "tbsp"},
+      {"name": "onion", "amount": 0.25, "unit": ""}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1020,
+    "title": "Chicken & Quinoa Power Bowl",
+    "prepTime": 30,
+    "protein": 56.0,
+    "fiber": 8.5,
+    "calories": 520.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chicken breast", "amount": 200, "unit": "g"},
+      {"name": "quinoa", "amount": 1, "unit": "cup"},
+      {"name": "spinach", "amount": 2, "unit": "cups"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "lemon", "amount": 1, "unit": ""},
+      {"name": "garlic", "amount": 2, "unit": "cloves"}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1021,
+    "title": "Tuna & White Bean Salad",
+    "prepTime": 10,
+    "protein": 45.0,
+    "fiber": 9.0,
+    "calories": 350.0,
+    "dietTags": ["gluten free", "pescetarian"],
+    "allergens": ["seafood"],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "canned tuna", "amount": 200, "unit": "g"},
+      {"name": "kidney beans", "amount": 1, "unit": "cup"},
+      {"name": "tomatoes", "amount": 1, "unit": "cup"},
+      {"name": "onion", "amount": 0.5, "unit": ""},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "lemon", "amount": 1, "unit": ""}
+    ],
+    "score": 0
+  },
+  {
+    "id": 1022,
+    "title": "Baked Chicken Thighs with Garlic Green Beans",
+    "prepTime": 35,
+    "protein": 55.0,
+    "fiber": 4.0,
+    "calories": 420.0,
+    "dietTags": ["gluten free"],
+    "allergens": [],
+    "image": "",
+    "sourceUrl": "",
+    "ingredients": [
+      {"name": "chicken breast", "amount": 250, "unit": "g"},
+      {"name": "green beans", "amount": 2, "unit": "cups"},
+      {"name": "garlic", "amount": 4, "unit": "cloves"},
+      {"name": "olive oil", "amount": 2, "unit": "tbsp"},
+      {"name": "lemon", "amount": 1, "unit": ""}
+    ],
+    "score": 0
   }
 ]

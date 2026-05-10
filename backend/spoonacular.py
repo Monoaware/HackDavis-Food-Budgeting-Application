@@ -8,8 +8,20 @@ load_dotenv()
 SPOONACULAR_API_KEY = os.getenv("SPOONACULAR_API_KEY")
 BASE_URL = "https://api.spoonacular.com/recipes/complexSearch"
 _FALLBACK_PATH = os.path.join(os.path.dirname(__file__), "data", "fallback_recipes.json")
+_CACHE_PATH    = os.path.join(os.path.dirname(__file__), "data", "recipe_cache.json")
 
-_cache = {}
+def _load_cache():
+    try:
+        with open(_CACHE_PATH, "r") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+def _save_cache(cache):
+    with open(_CACHE_PATH, "w") as f:
+        json.dump(cache, f)
+
+_cache = _load_cache()
 
 
 def _cache_key(meal_plan):
@@ -17,7 +29,16 @@ def _cache_key(meal_plan):
         "allergens": sorted(meal_plan.get("allergens", [])),
         "diet": meal_plan.get("dietaryTags", [""])[0] if meal_plan.get("dietaryTags") else "",
         "maxPrepTime": meal_plan.get("maxPrepTime"),
+        "minProtein": _min_protein_per_serving(meal_plan),
     }, sort_keys=True)
+
+
+def _min_protein_per_serving(meal_plan):
+    protein_goal = meal_plan.get("proteinGoal", 0)
+    num_meals = meal_plan.get("numMeals", 3)
+    if protein_goal > 0 and num_meals > 0:
+        return round(protein_goal / num_meals * 0.5, 1)
+    return None
 
 
 def _extract_nutrient(nutrients, name):
@@ -77,7 +98,7 @@ def fetch_recipes(meal_plan):
 
     params = {
         "apiKey": SPOONACULAR_API_KEY,
-        "number": 30,
+        "number": 15,
         "addRecipeNutrition": True,
         "addRecipeInformation": True,
     }
@@ -89,8 +110,15 @@ def fetch_recipes(meal_plan):
     if max_prep_time is not None:
         params["maxReadyTime"] = max_prep_time
 
+    min_protein = _min_protein_per_serving(meal_plan)
+    if min_protein:
+        params["minProtein"] = min_protein
+        params["sort"] = "protein"
+        params["sortDirection"] = "desc"
+
     try:
         response = requests.get(BASE_URL, params=params, timeout=15)
+        print(f"[SPOONACULAR] Points this request: {response.headers.get('X-API-Quota-Request', '?')} | Points used today: {response.headers.get('X-API-Quota-Used', '?')}")
         response.raise_for_status()
         results = response.json().get("results", [])
         recipes = [_normalize_recipe(r) for r in results]
@@ -99,4 +127,5 @@ def fetch_recipes(meal_plan):
         recipes = _load_fallback()
 
     _cache[key] = recipes
+    _save_cache(_cache)
     return recipes

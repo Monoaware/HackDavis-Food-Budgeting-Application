@@ -38,6 +38,7 @@ export default function App() {
           dietaryTags:  (() => { const v = prefs.diets.map(d => { const lower = d.toLowerCase(); return DIET_SLUG[lower] ?? lower }); console.log('[DEBUG] dietaryTags:', v); return v; })(),
           proteinGoal:  prefs.proteinGoal ? parseFloat(prefs.proteinGoal) : undefined,
           fiberGoal:    prefs.fiberGoal   ? parseFloat(prefs.fiberGoal)   : undefined,
+          maxPrepTime:  prefs.maxPrepTime ? parseFloat(prefs.maxPrepTime) : undefined,
         },
       }),
     })
@@ -81,6 +82,7 @@ export default function App() {
     if (prefs.budget)              body.budget       = parseFloat(prefs.budget)
     if (prefs.intolerances.length) body.Intolerances = prefs.intolerances
     if (prefs.diets.length)        body.Diets        = prefs.diets
+    if (prefs.maxPrepTime)         body.maxPrepTime  = parseFloat(prefs.maxPrepTime)
 
     const res = await fetch('/api/meal-plans', {
       method: 'POST',

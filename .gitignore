@@ -5,3 +5,4 @@ __pycache__/
 ./frontend/node_modules/*
 __pycache__
 *node_modules
+backend/data/recipe_cache.json

@@ -11,6 +11,7 @@ export interface PlanPreferences {
   diets: string[]
   proteinGoal: string
   fiberGoal: string
+  maxPrepTime?: string
 }
 
 interface Props {
@@ -25,6 +26,7 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
   const [diets, setDiets] = useState<string[]>([])
   const [protein, setProtein] = useState('')
   const [fiber, setFiber] = useState('')
+  const [maxPrepTime, setMaxPrepTime] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -37,7 +39,15 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
     setError('')
     setLoading(true)
     try {
-      await onSubmit({ numMeals, budget, intolerances, diets, proteinGoal: protein, fiberGoal: fiber })
+      await onSubmit({
+        numMeals,
+        budget,
+        intolerances,
+        diets,
+        proteinGoal: protein,
+        fiberGoal: fiber,
+        maxPrepTime: maxPrepTime || undefined,
+      })
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
@@ -79,6 +89,17 @@ export default function PreferencesPage({ onBack, onSubmit }: Props) {
                   >+</button>
                 </div>
               </div>
+                <div className="field">
+                  <label htmlFor="max-prep">Max prep time (min) <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>(optional)</span></label>
+                  <input
+                    id="max-prep"
+                    type="number"
+                    min="0"
+                    placeholder="e.g. 30"
+                    value={maxPrepTime}
+                    onChange={e => setMaxPrepTime(e.target.value)}
+                  />
+                </div>
               <div className="field">
                 <label htmlFor="budget">Weekly budget</label>
                 <div className="input-prefix-wrap">
